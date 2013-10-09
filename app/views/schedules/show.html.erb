@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Am working hours:</b>
+  <%= @schedule.am_working_hours_id %>
+</p>
+
+<p>
+  <b>Pm working hours:</b>
+  <%= @schedule.pm_working_hours_id %>
+</p>
+
+<p>
+  <b>Average meeting duration:</b>
+  <%= @schedule.average_meeting_duration %>
+</p>
+
+<p>
+  <b>Transport:</b>
+  <%= @schedule.transport %>
+</p>
+
+<p>
+  <b>Speed:</b>
+  <%= @schedule.speed %>
+</p>
+
+<p>
+  <b>Hq location:</b>
+  <%= @schedule.hq_location_id %>
+</p>
+
+<p>
+  <b>Ending location:</b>
+  <%= @schedule.ending_location_id %>
+</p>
+
+<p>
+  <b>Created by:</b>
+  <%= @schedule.created_by %>
+</p>
+
+<p>
+  <b>Assigned:</b>
+  <%= @schedule.assigned_id %>
+</p>
+
+<p>
+  <b>Schedule date:</b>
+  <%= @schedule.schedule_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+<%= link_to 'Back', schedules_path %>

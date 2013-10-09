@@ -1,5 +1,14 @@
 Ipadapp::Application.routes.draw do
 
+  resources :locations
+
+
+  resources :schedules
+
+
+  resources :meetings
+
+
   resources :clients
 
 

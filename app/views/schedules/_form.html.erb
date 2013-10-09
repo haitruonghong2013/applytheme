@@ -1,0 +1,57 @@
+<%= form_for(@schedule) do |f| %>
+  <% if @schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
+
+      <ul>
+      <% @schedule.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :am_working_hours_id %><br />
+    <%= f.number_field :am_working_hours_id %>
+  </div>
+  <div class="field">
+    <%= f.label :pm_working_hours_id %><br />
+    <%= f.number_field :pm_working_hours_id %>
+  </div>
+  <div class="field">
+    <%= f.label :average_meeting_duration %><br />
+    <%= f.number_field :average_meeting_duration %>
+  </div>
+  <div class="field">
+    <%= f.label :transport %><br />
+    <%= f.text_field :transport %>
+  </div>
+  <div class="field">
+    <%= f.label :speed %><br />
+    <%= f.number_field :speed %>
+  </div>
+  <div class="field">
+    <%= f.label :hq_location_id %><br />
+    <%= f.number_field :hq_location_id %>
+  </div>
+  <div class="field">
+    <%= f.label :ending_location_id %><br />
+    <%= f.number_field :ending_location_id %>
+  </div>
+  <div class="field">
+    <%= f.label :created_by %><br />
+    <%= f.number_field :created_by %>
+  </div>
+  <div class="field">
+    <%= f.label :assigned_id %><br />
+    <%= f.number_field :assigned_id %>
+  </div>
+  <div class="field">
+    <%= f.label :schedule_date %><br />
+    <%= f.datetime_select :schedule_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
