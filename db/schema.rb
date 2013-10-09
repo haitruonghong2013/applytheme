@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131007103755) do
+ActiveRecord::Schema.define(:version => 20131008110142) do
+
+  create_table "organizations", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "posts", :force => true do |t|
     t.string   "title"
@@ -46,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20131007103755) do
     t.datetime "updated_at",                             :null => false
     t.string   "name"
     t.string   "authentication_token"
+    t.integer  "organization_id"
   end
 
   add_index "users", ["authentication_token"], :name => "index_users_on_authentication_token", :unique => true
