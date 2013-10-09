@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="43f2d8a7-962d-4719-8f0d-bb20bc32c991" name="Default" comment="add client and client notes">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
+    <list default="true" id="43f2d8a7-962d-4719-8f0d-bb20bc32c991" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ipadapp.iws" />
@@ -17,7 +16,7 @@
     <file path="/application.yml" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381134993957" ignored="false" />
     <file path="/20131007103755_add_authentication_token_to_users.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381142293765" ignored="false" />
     <file path="/sessions_controller.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381144255495" ignored="false" />
-    <file path="/Dummy.txt" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381288832384" ignored="false" />
+    <file path="/Dummy.txt" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381288870755" ignored="false" />
     <file path="/20131008110142_add_organization_id_to_users.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381230242401" ignored="false" />
     <file path="/a.sql" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381283171561" ignored="false" />
     <file path="/20131009020509_create_clients.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381284618635" ignored="false" />
@@ -565,7 +564,11 @@
       <created>1381288821986</created>
       <updated>1381288821986</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add client and client notes">
+      <created>1381288874960</created>
+      <updated>1381288874960</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
