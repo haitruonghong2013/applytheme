@@ -17,13 +17,15 @@ Ipadapp::Application.routes.draw do
 
   #get "home/index"
 
-  devise_for :users
+  devise_for :user,:path_prefix => 'd'
+
   #resource :users
   devise_scope :user do
     post 'sessions' => 'sessions#create', :as => 'login'
     delete 'sessions' => 'sessions#destroy', :as => 'logout'
   end
 
+  resources :users
   root :to => "home#index"
 
   # The priority is based upon order of creation:
