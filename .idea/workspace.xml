@@ -1,53 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="43f2d8a7-962d-4719-8f0d-bb20bc32c991" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20131009030031_create_meetings.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20131009031611_create_schedules.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20131009031855_create_locations.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/locations/_form.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/meetings/_form.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/schedules/_form.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/locations/edit.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/meetings/edit.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/schedules/edit.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/locations/index.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/meetings/index.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/schedules/index.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/location.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/unit/location_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/locations.css.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/locations.js.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/locations.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/locations_controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/functional/locations_controller_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/locations_helper.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/unit/helpers/locations_helper_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/meeting.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/unit/meeting_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/meetings.css.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/meetings.js.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/meetings.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/meetings_controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/functional/meetings_controller_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/meetings_helper.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/unit/helpers/meetings_helper_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/locations/new.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/meetings/new.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/schedules/new.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/schedule.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/unit/schedule_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/stylesheets/schedules.css.scss" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/assets/javascripts/schedules.js.coffee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/fixtures/schedules.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/schedules_controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/functional/schedules_controller_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/helpers/schedules_helper.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/unit/helpers/schedules_helper_test.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/locations/show.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/meetings/show.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/schedules/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
+    <list default="true" id="43f2d8a7-962d-4719-8f0d-bb20bc32c991" name="Default" comment="add client and client notes">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ipadapp.iws" />
@@ -62,7 +17,7 @@
     <file path="/application.yml" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381134993957" ignored="false" />
     <file path="/20131007103755_add_authentication_token_to_users.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381142293765" ignored="false" />
     <file path="/sessions_controller.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381144255495" ignored="false" />
-    <file path="/Dummy.txt" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381285945739" ignored="false" />
+    <file path="/Dummy.txt" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381288832384" ignored="false" />
     <file path="/20131008110142_add_organization_id_to_users.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381230242401" ignored="false" />
     <file path="/a.sql" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381283171561" ignored="false" />
     <file path="/20131009020509_create_clients.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381284618635" ignored="false" />
@@ -95,7 +50,7 @@
       <file leaf-file-name="20131009030031_create_meetings.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/db/migrate/20131009030031_create_meetings.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="20" selection-start="329" selection-end="329" vertical-scroll-proportion="0.5541872">
+            <state line="15" column="38" selection-start="329" selection-end="329" vertical-scroll-proportion="0.5541872">
               <folding />
             </state>
           </provider>
@@ -606,7 +561,11 @@
       <created>1381285951874</created>
       <updated>1381285951874</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add client and client notes">
+      <created>1381288821986</created>
+      <updated>1381288821986</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -634,11 +593,11 @@
     <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32972136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32972136" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32988048" sideWeight="0.74303406" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34103584" sideWeight="0.6702786" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34103584" sideWeight="0.6702786" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3993808" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25696594" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -814,7 +773,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20131009030031_create_meetings.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="20" selection-start="329" selection-end="329" vertical-scroll-proportion="0.5541872">
+        <state line="15" column="38" selection-start="329" selection-end="329" vertical-scroll-proportion="0.5541872">
           <folding />
         </state>
       </provider>

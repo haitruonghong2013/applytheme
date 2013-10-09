@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131009021320) do
+ActiveRecord::Schema.define(:version => 20131009031855) do
 
   create_table "client_notes", :force => true do |t|
     t.integer  "client_id"
@@ -34,6 +34,27 @@ ActiveRecord::Schema.define(:version => 20131009021320) do
     t.integer  "created_by"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "locations", :force => true do |t|
+    t.string   "address"
+    t.string   "longtitue"
+    t.string   "latitue"
+    t.integer  "client_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "meetings", :force => true do |t|
+    t.integer  "client_id"
+    t.integer  "user_id"
+    t.datetime "meeting_time"
+    t.integer  "meeting_duration"
+    t.string   "status"
+    t.integer  "schedule_id"
+    t.integer  "created_by"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "organizations", :force => true do |t|
@@ -59,6 +80,21 @@ ActiveRecord::Schema.define(:version => 20131009021320) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "schedules", :force => true do |t|
+    t.integer  "am_working_hours_id"
+    t.integer  "pm_working_hours_id"
+    t.integer  "average_meeting_duration"
+    t.string   "transport"
+    t.integer  "speed"
+    t.integer  "hq_location_id"
+    t.integer  "ending_location_id"
+    t.integer  "created_by"
+    t.integer  "assigned_id"
+    t.datetime "schedule_date"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
