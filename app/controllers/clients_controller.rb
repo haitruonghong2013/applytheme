@@ -1,6 +1,8 @@
 class ClientsController < ApplicationController
   # GET /clients
   # GET /clients.json
+  before_filter :authenticate_user!
+  load_and_authorize_resource
   def index
     @clients = Client.all
 
@@ -41,7 +43,7 @@ class ClientsController < ApplicationController
   # POST /clients.json
   def create
     @client = Client.new(params[:client])
-
+    @client.created_by= current_user.id
     respond_to do |format|
       if @client.save
         format.html { redirect_to @client, notice: 'Client was successfully created.' }

@@ -10,6 +10,7 @@
     <th>Address</th>
     <th>Age</th>
     <th>Sex</th>
+    <th>Create_By</th>
     <th></th>
     <th></th>
     <th></th>
@@ -25,6 +26,7 @@
     <td><%= client.address %></td>
     <td><%= client.age %></td>
     <td><%= client.sex %></td>
+    <td><%= client.user ? client.user.name : '' %></td>
     <td><%= link_to 'Show', client %></td>
     <td><%= link_to 'Edit', edit_client_path(client) %></td>
     <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>

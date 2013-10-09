@@ -16,13 +16,13 @@
 
 <% @meetings.each do |meeting| %>
   <tr>
-    <td><%= meeting.client_id %></td>
-    <td><%= meeting.user_id %></td>
+    <td><%= meeting.client ? meeting.client.name : '' %></td>
+    <td><%= meeting.user ? meeting.user.name : '' %></td>
     <td><%= meeting.meeting_time %></td>
     <td><%= meeting.meeting_duration %></td>
     <td><%= meeting.status %></td>
     <td><%= meeting.schedule_id %></td>
-    <td><%= meeting.created_by %></td>
+    <td><%= meeting.owner_user ? meeting.owner_user.name : '' %></td>
     <td><%= link_to 'Show', meeting %></td>
     <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
     <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>

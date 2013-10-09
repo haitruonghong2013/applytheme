@@ -8,8 +8,10 @@ class Ability
        if user.has_role? :admin
          #can :manage, :all
          can :manage, Post
-         #can :create, Post
-         #can :index, Post
+         can :manage, User
+         can :manage, Client
+         can :manage, Meeting
+         can :manage, Schedule
 
        #else
        #  can :read, :all
@@ -19,6 +21,11 @@ class Ability
          can :show, Post
          can :create, Post
          can :index, Post
+         can :manage, User
+         can :manage, Client
+         can :manage, Meeting
+         can :manage, Schedule
+
        end
 
        if user.has_role? :saleLeader

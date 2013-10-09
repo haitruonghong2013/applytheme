@@ -1,6 +1,8 @@
 class SchedulesController < ApplicationController
   # GET /schedules
   # GET /schedules.json
+  before_filter :authenticate_user!
+  load_and_authorize_resource
   def index
     @schedules = Schedule.all
 
@@ -41,7 +43,7 @@ class SchedulesController < ApplicationController
   # POST /schedules.json
   def create
     @schedule = Schedule.new(params[:schedule])
-
+    @schedule.created_by = current_user.id
     respond_to do |format|
       if @schedule.save
         format.html { redirect_to @schedule, notice: 'Schedule was successfully created.' }
