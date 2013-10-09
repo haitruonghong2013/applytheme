@@ -4,6 +4,8 @@
   <tr>
     <th>email</th>
     <th>name</th>
+    <th>role</th>
+    <th>organization</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,6 +15,8 @@
   <tr>
     <td><%= user.email %></td>
     <td><%= user.name %></td>
+    <td><%= user.roles and user.roles.first ? user.roles.first.name : '' %></td>
+    <td><%= user.organization ? user.organization.name : '' %></td>
     <td><%= link_to 'Show', user %></td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
     <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -41,7 +41,23 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-    #assign user role
+    if params[:user][:role_ids] == nil
+      #salestaff id
+      params[:user][:role_ids] = Role.find_by_name(:saleStaff).id
+    else
+      role = Role.find(params[:user][:role_ids])
+
+      if role and role.name == 'businessOwner'
+        #assign user role
+        @user.organization = Organization.new
+        @user.organization.name = params[:user][:name]
+      else
+        #Todo: add organization_id of created by user
+        @user.organization_id = 1
+      end
+    end
+
+
     #@user.add_role :admin
     respond_to do |format|
       if @user.save

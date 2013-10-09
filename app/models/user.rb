@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   rolify
+  belongs_to :organization
   before_save :ensure_authentication_token
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
