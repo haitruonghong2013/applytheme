@@ -1,5 +1,8 @@
 Ipadapp::Application.routes.draw do
 
+  resources :clients
+
+
   resources :posts
 
 
