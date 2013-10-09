@@ -42,7 +42,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     #assign user role
-    @user.add_role :admin
+    #@user.add_role :admin
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }
