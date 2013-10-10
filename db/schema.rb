@@ -82,8 +82,7 @@ ActiveRecord::Schema.define(:version => 20131010021045) do
   add_index "roles", ["name"], :name => "index_roles_on_name"
 
   create_table "schedules", :force => true do |t|
-    t.integer  "am_working_hours_id"
-    t.integer  "pm_working_hours_id"
+    t.integer  "working_hours_id"
     t.integer  "average_meeting_duration"
     t.string   "transport"
     t.integer  "speed"
@@ -109,7 +108,6 @@ ActiveRecord::Schema.define(:version => 20131010021045) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
-    t.string   "name"
     t.string   "authentication_token"
     t.integer  "organization_id"
     t.string   "username"

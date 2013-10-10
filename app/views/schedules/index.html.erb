@@ -2,8 +2,7 @@
 
 <table>
   <tr>
-    <th>Am working hours</th>
-    <th>Pm working hours</th>
+    <th>Working hours</th>
     <th>Average meeting duration</th>
     <th>Transport</th>
     <th>Speed</th>
@@ -19,8 +18,7 @@
 
 <% @schedules.each do |schedule| %>
   <tr>
-    <td><%= schedule.am_working_hours_id %></td>
-    <td><%= schedule.pm_working_hours_id %></td>
+    <td><%= schedule.working_hours_id %></td>
     <td><%= schedule.average_meeting_duration %></td>
     <td><%= schedule.transport %></td>
     <td><%= schedule.speed %></td>

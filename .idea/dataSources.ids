@@ -719,8 +719,7 @@
     </table>
     <table name="schedules" schema="" catalog="ipadapp_development1" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="am_working_hours_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
-      <column name="pm_working_hours_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="working_hours_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
       <column name="average_meeting_duration" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
       <column name="transport" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
       <column name="speed" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
