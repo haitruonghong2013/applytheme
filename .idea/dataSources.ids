@@ -751,13 +751,14 @@
       <column name="last_sign_in_ip" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
       <column name="created_at" sqlType="DATETIME" length="19" precision="0" nullable="false" jdbcType="93"/>
       <column name="updated_at" sqlType="DATETIME" length="19" precision="0" nullable="false" jdbcType="93"/>
-      <column name="name" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
       <column name="authentication_token" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
       <column name="organization_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
+      <column name="username" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="id"/>
       <index name="index_users_on_authentication_token" unique="true" columns="authentication_token"/>
       <index name="index_users_on_email" unique="true" columns="email"/>
       <index name="index_users_on_reset_password_token" unique="true" columns="reset_password_token"/>
+      <index name="index_users_on_username" unique="true" columns="username"/>
     </table>
     <table name="users_roles" schema="" catalog="ipadapp_development1" type="TABLE">
       <column name="user_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>

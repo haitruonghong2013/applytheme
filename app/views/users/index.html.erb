@@ -3,7 +3,7 @@
 <table>
   <tr>
     <th>email</th>
-    <th>name</th>
+    <th>userName</th>
     <th>role</th>
     <th>organization</th>
     <th></th>
@@ -14,7 +14,7 @@
 <% @users.each do |user| %>
   <tr>
     <td><%= user.email %></td>
-    <td><%= user.name %></td>
+    <td><%= user.username %></td>
     <td><%= user.roles and user.roles.first ? user.roles.first.name : '' %></td>
     <td><%= user.organization ? user.organization.name : '' %></td>
     <td><%= link_to 'Show', user %></td>
