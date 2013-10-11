@@ -1,33 +1,13 @@
 <%= simple_form_for @user do |f| %>
   <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
+        <%= f.error_notification %>
+        <%= display_base_errors @user %>
   <% end %>
-    <div><%= f.label :username %>
-      <br/>
-      <%= f.text_field :username, :autofocus => true %>
-    </div>
-    <div><%= f.label :email %><br />
-      <%= f.email_field :email %></div>
-
-    <div><%= f.label :password %><br />
-      <%= f.password_field :password %></div>
-
-    <div><%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation %></div>
-
-    <div><%= f.label :select_role %><br />
-    <%= f.input :role_ids, :collection => Role.all, :as => :radio_buttons, :label_method => lambda {|t| t.name.titleize}, :label => false, :item_wrapper_class => 'inline', checked: @user.role_ids.first %>
-    </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.input :username, :autofocus => true %>
+    <%= f.input :email, :required => true %>
+    <%= f.input :password, :required => true %>
+    <%= f.input :password_confirmation, :required => true %>
+    <%= f.label :select_role %><br />
+    <%= f.input :role_ids, :collection => Role.all, :as => :radio_buttons, :label_method => lambda {|t| t.name.titleize}, :label => false, :item_wrapper_class => 'inline', checked: Role.find_by_name(:saleStaff).id %>
+    <%= f.button :submit, 'Sign up', :class => 'btn-primary' %>
 <% end %>
