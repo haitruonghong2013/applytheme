@@ -659,7 +659,6 @@
       <column name="email" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
       <column name="country" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
       <column name="city" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
-      <column name="address" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
       <column name="age" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
       <column name="sex" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
       <column name="organization_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>

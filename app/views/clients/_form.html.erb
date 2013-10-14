@@ -5,7 +5,6 @@
           padding: 5px;
           border: 1px solid #999;
       }
-
     /*Fix bug Twitter Bootstrap CSS affecting Google Maps*/
       #map-canvas img {
           max-width: none;
@@ -31,7 +30,7 @@
       }
 
       function codeAddress() {
-          var address = document.getElementById('client_address').value;
+          var address = document.getElementById('client_location_attributes_address').value;
           geocoder.geocode({ 'address': address}, function (results, status) {
               if (status == google.maps.GeocoderStatus.OK) {
                   map.setCenter(results[0].geometry.location);
@@ -70,12 +69,12 @@
     <%= f.input :email, :required => true %>
     <%= f.input :country, :required => true %>
     <%= f.input :city, :required => true %>
-    <%= f.input :address, :required => true %>
 
     <%= f.simple_fields_for :location do |location| %>
+      <%= location.input :address,:required => true %>
       <%= location.input :latitude %>
       <%= location.input :longitude %>
-      <%= location.input :address, :as=>:hidden %>
+
     <%end%>
 
     <input type="button" value="Get Position" onclick="codeAddress()">

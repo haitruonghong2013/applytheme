@@ -20,42 +20,26 @@
 
     function initialize() {
         geocoder = new google.maps.Geocoder();
-        var latlng = new google.maps.LatLng(21.0333333, 105.85000000000002);
+        var latlng = new google.maps.LatLng(<%= @client.location.latitude %>,<%= @client.location.longitude %>);
         var mapOptions = {
             zoom: 8,
             center: latlng,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         }
+
+
         map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-        codeAddress();
-    }
 
-    function codeAddress() {
-        var address ="<%= @client.address %>";
-        if (address == null || address ==''){
-            return;
-        }
-        geocoder.geocode({ 'address': address}, function (results, status) {
-            if (status == google.maps.GeocoderStatus.OK) {
-                map.setCenter(results[0].geometry.location);
-                var marker = new google.maps.Marker({
-                    map: map,
-                    position: results[0].geometry.location
-                });
-//                  infowindow.setContent({
-//                      content: 'Latitude: ' + results[0].geometry.location +
-//                              '<br>Longitude: ' + results[0].geometry.location
-//                  });
-                var infowindow = new google.maps.InfoWindow({
-                    content: 'Latitude: ' + results[0].geometry.location.lat() +
-                            '<br>Longitude: ' + results[0].geometry.location.lng()
-                });
-                infowindow.open(map, marker);
-
-            } else {
-                alert('Geocode was not successful for the following reason: ' + status);
-            }
+        var marker = new google.maps.Marker({
+            map: map,
+            position: latlng
         });
+
+        var infowindow = new google.maps.InfoWindow({
+            content: 'Latitude: ' + <%= @client.location.latitude %> +
+                    '<br>Longitude: ' + <%= @client.location.longitude %>
+        });
+        infowindow.open(map, marker);
     }
 
     google.maps.event.addDomListener(window, 'load', initialize);
@@ -89,7 +73,7 @@
 
 <p>
   <b>Address:</b>
-  <%= @client.address %>
+  <%= @client.location.address %>
 <div id="map-canvas" style="width:500px;height:380px;"></div>
 </p>
 
