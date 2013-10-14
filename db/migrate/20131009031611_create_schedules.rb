@@ -1,8 +1,6 @@
 class CreateSchedules < ActiveRecord::Migration
   def change
     create_table :schedules do |t|
-      t.integer :am_working_hours_id
-      t.integer :pm_working_hours_id
       t.integer :average_meeting_duration
       t.string :transport
       t.integer :speed

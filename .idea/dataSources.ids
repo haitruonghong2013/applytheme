@@ -718,7 +718,6 @@
     </table>
     <table name="schedules" schema="" catalog="ipadapp_development1" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
-      <column name="working_hours_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
       <column name="average_meeting_duration" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
       <column name="transport" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
       <column name="speed" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
@@ -729,6 +728,8 @@
       <column name="schedule_date" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
       <column name="created_at" sqlType="DATETIME" length="19" precision="0" nullable="false" jdbcType="93"/>
       <column name="updated_at" sqlType="DATETIME" length="19" precision="0" nullable="false" jdbcType="93"/>
+      <column name="start_time" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
+      <column name="end_time" sqlType="DATETIME" length="19" precision="0" nullable="true" jdbcType="93"/>
       <primary-key name="PRIMARY" columns="id"/>
     </table>
     <table name="schema_migrations" schema="" catalog="ipadapp_development1" type="TABLE">

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131010021045) do
+ActiveRecord::Schema.define(:version => 20131014102302) do
 
   create_table "client_notes", :force => true do |t|
     t.integer  "client_id"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(:version => 20131010021045) do
     t.string   "email"
     t.string   "country"
     t.string   "city"
-    t.string   "address"
     t.integer  "age"
     t.integer  "sex"
     t.integer  "organization_id"
@@ -38,8 +37,8 @@ ActiveRecord::Schema.define(:version => 20131010021045) do
 
   create_table "locations", :force => true do |t|
     t.string   "address"
-    t.float   "longitude"
-    t.float   "latitude"
+    t.float    "longitude"
+    t.float    "latitude"
     t.integer  "client_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
@@ -82,7 +81,6 @@ ActiveRecord::Schema.define(:version => 20131010021045) do
   add_index "roles", ["name"], :name => "index_roles_on_name"
 
   create_table "schedules", :force => true do |t|
-    t.integer  "working_hours_id"
     t.integer  "average_meeting_duration"
     t.string   "transport"
     t.integer  "speed"
@@ -93,6 +91,8 @@ ActiveRecord::Schema.define(:version => 20131010021045) do
     t.datetime "schedule_date"
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
+    t.datetime "start_time"
+    t.datetime "end_time"
   end
 
   create_table "users", :force => true do |t|

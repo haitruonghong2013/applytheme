@@ -1,9 +1,11 @@
 <h1>Listing schedules</h1>
 
-<table>
+<table class="table table-hover table-condensed">
+  <thead>
   <tr>
-    <th>Working hours</th>
-    <th>Average meeting duration</th>
+    <th>Start time</th>
+    <th>End time</th>
+    <th>Average meeting</th>
     <th>Transport</th>
     <th>Speed</th>
     <th>Hq location</th>
@@ -15,10 +17,12 @@
     <th></th>
     <th></th>
   </tr>
-
+</thead>
+  <tbody>
 <% @schedules.each do |schedule| %>
   <tr>
-    <td><%= schedule.working_hours_id %></td>
+    <td><%= schedule.start_time %></td>
+    <td><%= schedule.end_time %></td>
     <td><%= schedule.average_meeting_duration %></td>
     <td><%= schedule.transport %></td>
     <td><%= schedule.speed %></td>
@@ -32,8 +36,9 @@
     <td><%= link_to 'Destroy', schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
+  </tbody>
 </table>
 
 <br />
 
-<%= link_to 'New Schedule', new_schedule_path %>
+<%= link_to 'New Schedule', new_schedule_path,:class => 'btn btn-primary'  %>
