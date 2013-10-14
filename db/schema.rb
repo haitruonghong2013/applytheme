@@ -38,8 +38,8 @@ ActiveRecord::Schema.define(:version => 20131010021045) do
 
   create_table "locations", :force => true do |t|
     t.string   "address"
-    t.string   "longtitue"
-    t.string   "latitue"
+    t.float   "longitude"
+    t.float   "latitude"
     t.integer  "client_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

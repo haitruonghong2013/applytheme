@@ -671,8 +671,8 @@
     <table name="locations" schema="" catalog="ipadapp_development1" type="TABLE">
       <column name="id" sqlType="INT" length="10" precision="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="address" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
-      <column name="longtitue" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
-      <column name="latitue" sqlType="VARCHAR" length="255" precision="0" nullable="true" jdbcType="12"/>
+      <column name="longitude" sqlType="FLOAT" length="12" precision="0" nullable="true" jdbcType="7"/>
+      <column name="latitude" sqlType="FLOAT" length="12" precision="0" nullable="true" jdbcType="7"/>
       <column name="client_id" sqlType="INT" length="10" precision="0" nullable="true" jdbcType="4"/>
       <column name="created_at" sqlType="DATETIME" length="19" precision="0" nullable="false" jdbcType="93"/>
       <column name="updated_at" sqlType="DATETIME" length="19" precision="0" nullable="false" jdbcType="93"/>

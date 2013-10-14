@@ -27,7 +27,7 @@ class ClientsController < ApplicationController
   # GET /clients/new.json
   def new
     @client = Client.new
-
+    @client.location = Location.new
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @client }

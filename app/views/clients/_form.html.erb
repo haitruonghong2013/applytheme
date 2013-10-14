@@ -70,6 +70,12 @@
     <%= f.input :country, :required => true %>
     <%= f.input :city, :required => true %>
     <%= f.input :address, :required => true %>
+
+    <%= f.simple_fields_for :location do |location| %>
+      <%= location.input :latitude %>
+      <%= location.input :longitude %>
+    <%end%>
+
     <input type="button" value="Get Position" onclick="codeAddress()">
     <div id="map-canvas" style="width:500px;height:380px;"></div>
 
