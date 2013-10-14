@@ -1,28 +1,40 @@
 <%= link_to "IpadApp", root_path, :class => 'brand' %>
-<ul class="nav">
+<ul class="nav navbar-nav">
   <% if user_signed_in? %>
-    <li>
-    <%= link_to 'Sign Out', destroy_user_session_path, :method=>'delete' %>
-    </li>
-  <% else %>
-    <li>
-    <%= link_to 'Sign In', new_user_session_path %>
-    </li>
+      <% if current_user.has_role? :admin %>
+          <!--<li><%= link_to 'Posts Management', posts_path %></li>-->
+          <li><%= link_to 'User Management', users_path %></li>
+          <li><%= link_to 'Client Management', clients_path %></li>
+          <li><%= link_to 'Meeting Management', meetings_path %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Schedule Management <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Make schelude</a></li>
+              <li><%= link_to 'List scheludes', schedules_path %></li>
+            </ul>
+          </li>
+      <% end %>
   <% end %>
+</ul>
+
+<ul class="nav navbar-nav navbar-right">
   <% if user_signed_in? %>
-    <li>
-    <%= link_to 'Edit Account', edit_user_registration_path %>
-    </li>
-    <% if current_user.has_role? :admin %>
-      <!--<li><%= link_to 'Posts Management', posts_path %></li>-->
-      <li><%= link_to 'User Management', users_path %></li>
-      <li><%= link_to 'Client Management', clients_path %></li>
-      <li><%= link_to 'Meeting Management', meetings_path %></li>
-      <li><%= link_to 'Schedule Management', schedules_path %></li>
-    <% end %>
+      <li><a href="#">Welcome <%= current_user.username %></a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Edit Account</a></li>
+          <li><%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete' %></li>
+        </ul>
+      </li>
   <% else %>
-    <li>
-    <%= link_to 'Sign up', new_user_registration_path %>
-    </li>
+      <li>
+        <%= link_to 'Sign In', new_user_session_path %>
+      </li>
+      <li>
+        <%= link_to 'Sign up', new_user_registration_path %>
+      </li>
   <% end %>
+
+
 </ul>
