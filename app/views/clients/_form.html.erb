@@ -1,8 +1,80 @@
+<head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <title>Geocoding service</title>
+  <style>
+      html, body, #map-canvas {
+          height: 100%;
+          margin: 0px;
+          padding: 0px
+      }
+
+      #panel {
+          z-index: 5;
+          background-color: #fff;
+          padding: 5px;
+          border: 1px solid #999;
+      }
+
+    /*Fix bug Twitter Bootstrap CSS affecting Google Maps*/
+      #map-canvas img {
+          max-width: none;
+      }
+
+
+  </style>
+  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC7icpVNHCpzkJjilXkACn8VG9HlSe0u3s&sensor=false"></script>
+  <script>
+      var geocoder;
+      var map;
+//      var infowindow = new google.maps.InfoWindow();
+
+      function initialize() {
+          geocoder = new google.maps.Geocoder();
+          var latlng = new google.maps.LatLng(21.0333333, 105.85000000000002);
+          var mapOptions = {
+              zoom: 8,
+              center: latlng,
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+          }
+          map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+      }
+
+      function codeAddress() {
+          var address = document.getElementById('client_address').value;
+          geocoder.geocode({ 'address': address}, function (results, status) {
+              if (status == google.maps.GeocoderStatus.OK) {
+                  map.setCenter(results[0].geometry.location);
+                  var marker = new google.maps.Marker({
+                      map: map,
+                      position: results[0].geometry.location
+                  });
+//                  infowindow.setContent({
+//                      content: 'Latitude: ' + results[0].geometry.location +
+//                              '<br>Longitude: ' + results[0].geometry.location
+//                  });
+                  var infowindow = new google.maps.InfoWindow({
+                      content: 'Latitude: ' + results[0].geometry.location.lat() +
+                              '<br>Longitude: ' + results[0].geometry.location.lng()
+                  });
+                  infowindow.open(map, marker);
+
+              } else {
+                  alert('Geocode was not successful for the following reason: ' + status);
+              }
+          });
+      }
+
+      google.maps.event.addDomListener(window, 'load', initialize);
+
+  </script>
+</head>
+
 <%= simple_form_for(@client) do |f| %>
-  <% if @client.errors.any? %>
+    <% if @client.errors.any? %>
         <%= f.error_notification %>
         <%= display_base_errors @client %>
-  <% end %>
+    <% end %>
 
     <%= f.input :name, :autofocus => true %>
     <%= f.input :phone, :required => true %>
@@ -10,6 +82,9 @@
     <%= f.input :country, :required => true %>
     <%= f.input :city, :required => true %>
     <%= f.input :address, :required => true %>
+    <input type="button" value="Get Position" onclick="codeAddress()">
+    <div id="map-canvas" style="width:500px;height:380px;"></div>
+
     <%= f.input :age, :required => true %>
     <%= f.input :sex, :required => true %>
 
