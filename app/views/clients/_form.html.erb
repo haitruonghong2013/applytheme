@@ -26,8 +26,46 @@
               center: latlng,
               mapTypeId: google.maps.MapTypeId.ROADMAP
           }
+
           map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+          google.maps.event.addListener(map, 'click', function(event) {
+              placeMarker(event.latLng);
+              google.maps.event.clearListeners(this,'click');
+          });
+
+          function placeMarker(location) {
+//              var marker = new google.maps.Marker({
+//                  position: location,
+//                  map: map
+//              });
+//              var infowindow = new google.maps.InfoWindow({
+//                  content: 'Latitude: ' + location.lat() +
+//                          '<br>Longitude: ' + location.lng()
+//              });
+//              infowindow.open(map,marker);
+              var infowindow = new google.maps.InfoWindow();
+              geocoder.geocode({'latLng': location}, function(results, status) {
+                  if (status == google.maps.GeocoderStatus.OK) {
+                      if (results[1]) {
+                          map.setZoom(11);
+                          marker = new google.maps.Marker({
+                              position: latlng,
+                              map: map
+                          });
+                          infowindow.setContent(results[1].formatted_address);
+                          infowindow.open(map, marker);
+                          $('#client_location_attributes_address').val(results[1].formatted_address);
+                      } else {
+                          alert('No results found');
+                      }
+                  } else {
+                      alert('Geocoder failed due to: ' + status);
+                  }
+              });
+          }
       }
+
+
 
       function codeAddress() {
           var address = document.getElementById('client_location_attributes_address').value;
