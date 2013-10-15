@@ -1,15 +1,39 @@
+
 <%= simple_form_for(@schedule) do |f| %>
   <% if @schedule.errors.any? %>
         <%= f.error_notification %>
         <%= display_base_errors @schedule %>
   <% end %>
     <%= f.input :average_meeting_duration, :autofocus => true %>
-    <%= f.input :start_time %>
-    <%= f.input :end_time %>
+    <%= f.input :start_time ,:as=>:datetimepicker %>
+
+    <%= f.input :end_time,:as => :datepicker %>
     <%= f.input :transport %>
     <%= f.input :speed %>
     <%= f.input :hq_location_id %>
     <%= f.input :ending_location_id %>
-    <%= f.input :schedule_date %>
+    <%= f.input :schedule_date, :as => :datepicker %>
     <%= f.button :submit, :class => 'btn-primary' %>
 <% end %>
+
+<script>
+//    $(document).ready(function() {
+//        $("#schedule_start_time").datepicker();
+//        $("#schedule_schedule_date").datepicker();
+//    });
+$(function() {
+    $("input.datetimepicker").each(function(i) {
+        return $(this).datetimepicker({
+            dateFormat: "yy-mm-dd",
+            timeFormat: "hh:mm tt"
+        });
+    });
+    $("input.datepicker").each(function(i) {
+        return $(this).datepicker({
+            altFormat: "yy-mm-dd",
+            dateFormat: "mm/dd/yy",
+            altField: $(this).next()
+        });
+    });
+});
+</script>
