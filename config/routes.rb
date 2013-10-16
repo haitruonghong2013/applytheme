@@ -12,7 +12,11 @@ Ipadapp::Application.routes.draw do
   resources :clients
 
 
-  resources :posts
+  resources :posts do
+    collection do
+      delete :destroy_multiple
+    end
+  end
 
 
   #get "home/index"

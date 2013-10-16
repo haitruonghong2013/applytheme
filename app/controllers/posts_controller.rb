@@ -84,4 +84,12 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def destroy_multiple
+    Post.destroy(params[:blog_posts])
+    respond_to do |format|
+      format.html { redirect_to posts_url }
+      format.json { head :no_content }
+    end
+  end
 end
