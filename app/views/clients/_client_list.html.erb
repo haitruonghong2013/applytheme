@@ -18,7 +18,7 @@ Choose potential clients
   <tbody>
   <% clients.each do |client| %>
       <tr>
-        <td><%= check_box_tag 'clients[]', client.id %></td>
+        <td><%= check_box_tag 'clients[]', client.location.address %></td>
         <td><%= client.name %></td>
         <td><%= client.phone %></td>
         <td><%= client.email %></td>

@@ -221,6 +221,8 @@
 
 <script>
 $(function() {
+
+    var clientListAddress = [];
     var $pages = $(".steps-content").children("div"),
             $steps = $(".steps-wizard").children("div"),
             totalPages = $pages.length,
@@ -244,7 +246,14 @@ $(function() {
         }
 
         if (count == 2){
+
             initialize();
+
+            $('input[name="clients[]"]:checked').each(function() {
+                clientListAddress.push(this.value);
+//                alert(this.value);
+
+            });
         }
     });
 
