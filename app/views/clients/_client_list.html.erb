@@ -1,0 +1,35 @@
+Choose potential clients
+
+<table class="table table-hover table-condensed">
+  <thead>
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Country</th>
+    <th>City</th>
+    <th>Address</th>
+    <th>Age</th>
+    <th>Sex</th>
+    <th>Create_By</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% clients.each do |client| %>
+      <tr>
+        <td><%= check_box_tag 'clients[]', client.id %></td>
+        <td><%= client.name %></td>
+        <td><%= client.phone %></td>
+        <td><%= client.email %></td>
+        <td><%= client.country %></td>
+        <td><%= client.city %></td>
+        <td><%= client.location.address %></td>
+        <td><%= client.age %></td>
+        <td><%= client.sex %></td>
+        <td><%= client.user ? client.user.username : '' %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<br />

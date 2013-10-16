@@ -180,7 +180,8 @@
 
     <!-- STEP 2 -->
     <div class="step2-content">
-
+       <%= render :partial => 'clients/client_list', :locals => {:clients=>@clients} %>
+      <a href="#" class="navigation btn btn-primary" data-nav="next">Generate direction</a>
     </div>
     <!-- STEP 3 -->
     <div class="step3-content">
