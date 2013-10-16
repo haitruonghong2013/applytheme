@@ -1,3 +1,20 @@
 // Place all the styles related to the Schedules controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#panel {
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  border: 1px solid #999;
+}
+/*Fix bug Twitter Bootstrap CSS affecting Google Maps*/
+#map-canvas img {
+  max-width: none;
+}
+
+.steps-wizard>div, .steps-content>div {
+  display: none;
+}
+.steps-wizard .step-active, .steps-content .content-active {
+  display: block;
+}
