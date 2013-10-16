@@ -56,3 +56,5 @@ gem 'cancan'
 gem 'rolify'
 gem 'figaro'
 gem 'country_select'
+gem 'will_paginate', '~> 3.0'
+
