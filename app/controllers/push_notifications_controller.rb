@@ -80,4 +80,40 @@ class PushNotificationsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  def register_device
+    @push_notification = PushNotification.new(params[:push_notification])
+    @push_notification.user_id = current_user.id
+
+    respond_to do |format|
+      if @push_notification.save
+        format.json { render json: @push_notification, status: :created, location: @push_notification }
+      else
+        format.json { render json: @push_notification.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update_notif
+    @push_notification = PushNotification.find(params[:id])
+    respond_to do |format|
+      if @push_notification.update_attributes(params[:push_notification])
+        format.json { head :no_content }
+      else
+        format.json { render json: @push_notification.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def remove_device
+    @push_notification = PushNotification.find(params[:id])
+    @push_notification.destroy
+
+    respond_to do |format|
+      format.json { head :no_content }
+    end
+  end
+
+
 end

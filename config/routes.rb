@@ -1,6 +1,12 @@
 Ipadapp::Application.routes.draw do
 
-  resources :push_notifications
+  resources :push_notifications do
+    collection do
+      post :register_device
+      post :update_notif
+      post :remove_device
+    end
+  end
 
 
   resources :locations
