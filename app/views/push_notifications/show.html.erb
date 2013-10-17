@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Device:</b>
+  <%= @push_notification.device_id %>
+</p>
+
+<p>
+  <b>Notif:</b>
+  <%= @push_notification.notif %>
+</p>
+
+<p>
+  <b>Reminder for next meeting:</b>
+  <%= @push_notification.reminder_for_next_meeting %>
+</p>
+
+<p>
+  <b>Time reminder befor meeting:</b>
+  <%= @push_notification.time_reminder_befor_meeting %>
+</p>
+
+<p>
+  <b>Reminder for take note:</b>
+  <%= @push_notification.reminder_for_take_note %>
+</p>
+
+
+<%= link_to 'Edit', edit_push_notification_path(@push_notification) %> |
+<%= link_to 'Back', push_notifications_path %>
