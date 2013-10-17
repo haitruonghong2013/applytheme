@@ -25,8 +25,8 @@ Ipadapp::Application.routes.draw do
 
   #resource :users
   devise_scope :user do
-    post 'sessions' => 'sessions#create', :as => 'login'
-    delete 'sessions' => 'sessions#destroy', :as => 'logout'
+    post 'login' => 'sessions#create', :as => 'login'
+    delete 'logout' => 'sessions#destroy', :as => 'logout'
   end
 
   resources :users
