@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131014102302) do
+ActiveRecord::Schema.define(:version => 20131017083623) do
 
   create_table "client_notes", :force => true do |t|
     t.integer  "client_id"
@@ -67,6 +67,17 @@ ActiveRecord::Schema.define(:version => 20131014102302) do
     t.string   "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "push_notifications", :force => true do |t|
+    t.string   "device_id"
+    t.boolean  "notif"
+    t.boolean  "reminder_for_next_meeting"
+    t.string   "time_reminder_befor_meeting"
+    t.boolean  "reminder_for_take_note"
+    t.integer  "user_id"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
   end
 
   create_table "roles", :force => true do |t|

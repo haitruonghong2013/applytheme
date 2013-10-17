@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   has_many :meetings
   has_many :schedules, :foreign_key => 'assigned_id'
   has_many :own_schedules, :class_name => 'Schedule', :foreign_key => 'created_by'
+  has_many :push_notifications, :dependent => :destroy
   belongs_to :organization
 
   # Include default devise modules. Others available are:

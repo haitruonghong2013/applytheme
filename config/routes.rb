@@ -1,5 +1,8 @@
 Ipadapp::Application.routes.draw do
 
+  resources :push_notifications
+
+
   resources :locations
 
 
