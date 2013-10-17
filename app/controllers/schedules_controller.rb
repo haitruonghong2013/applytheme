@@ -4,11 +4,18 @@ class SchedulesController < ApplicationController
   before_filter :authenticate_user!
   load_and_authorize_resource
   def index
-    @schedules = Schedule.all
+    if params[:schedule_date]
+      @schedules = Schedule.where(:schedule_date => params[:schedule_date]).paginate(:page => params[:page], :per_page => params[:size]? params[:size]:PAGE_SIZE )
+    else
+      @schedules = Schedule.paginate(:page => params[:page], :per_page => params[:size]? params[:size]:PAGE_SIZE )
+    end
+
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @schedules }
+
+      #format.json { render json: @schedules.to_json(:include => :meetings) }
+      format.json { render json: @schedules.to_json(:include => {:meetings => { :only => [:client_id, :meeting_duration,:meeting_time]}}) }
     end
   end
 
