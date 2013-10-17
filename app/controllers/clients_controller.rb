@@ -98,4 +98,25 @@ class ClientsController < ApplicationController
       format.json { render json: @clients }
     end
   end
+
+  def search_all_clients
+    @clients = Client.where(:name => params[:key]).paginate(:page => params[:page], :per_page => params[:size]? params[:size]:PAGE_SIZE )
+    respond_to do |format|
+      format.json { render json: @clients }
+    end
+  end
+
+  def search_my_clients
+    @clients = Client.where(:created_by => current_user.id,:name => params[:key]).paginate(:page => params[:page], :per_page => params[:size]? params[:size]:PAGE_SIZE )
+    respond_to do |format|
+      format.json { render json: @clients }
+    end
+  end
+
+  def search_clients_by_staff
+    @clients = Client.where(:created_by => params[:staff_id],:name => params[:key]).paginate(:page => params[:page], :per_page => params[:size]? params[:size]:PAGE_SIZE )
+    respond_to do |format|
+      format.json { render json: @clients }
+    end
+  end
 end

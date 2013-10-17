@@ -6,14 +6,22 @@ Ipadapp::Application.routes.draw do
   resources :schedules
 
 
-  resources :meetings
+  resources :meetings do
+    collection do
+      get 'my_meetings'=> :get_my_meetings
+      get 'meetings_by_staff' => :get_meetings_by_staff
+    end
+  end
 
 
   resources :clients do
     collection do
       post 'new_client'=>'clients#create'
       get 'my_client'=>'clients#get_my_client'
-      get 'clients_by_staff' => 'clients#get_all_clients_by_user'
+      get 'clients_by_staff' => :get_all_clients_by_user
+      get 'search_clients' => :search_all_clients
+      get 'search_myclients' => :search_my_clients
+      get 'search_clients_bystaff' =>:search_clients_by_staff
     end
   end
 
