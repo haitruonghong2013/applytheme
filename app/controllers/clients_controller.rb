@@ -4,7 +4,8 @@ class ClientsController < ApplicationController
   before_filter :authenticate_user!
   load_and_authorize_resource
   def index
-    @clients = Client.all
+
+    @clients = Client.paginate(:page => params[:page], :per_page => params[:size]? params[:size]:PAGE_SIZE )
 
     respond_to do |format|
       format.html # index.html.erb
@@ -63,7 +64,8 @@ class ClientsController < ApplicationController
     respond_to do |format|
       if @client.update_attributes(params[:client])
         format.html { redirect_to clients_url, notice: 'Client was successfully updated.' }
-        format.json { head :no_content }
+        #format.json { head :no_content }
+        format.json { render json: @client, status: :ok, location: @client }
       else
         format.html { render action: "edit" }
         format.json { render json: @client.errors, status: :unprocessable_entity }
@@ -80,6 +82,20 @@ class ClientsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to clients_url }
       format.json { head :no_content }
+    end
+  end
+
+  def get_my_client
+    @clients = Client.where(:created_by => current_user.id).paginate(:page => params[:page], :per_page => params[:size]? params[:size]:PAGE_SIZE )
+    respond_to do |format|
+      format.json { render json: @clients }
+    end
+  end
+
+  def get_all_clients_by_user
+    @clients = Client.where(:created_by => params[:staff_id]).paginate(:page => params[:page], :per_page => params[:size]? params[:size]:PAGE_SIZE )
+    respond_to do |format|
+      format.json { render json: @clients }
     end
   end
 end

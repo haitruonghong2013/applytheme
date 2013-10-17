@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::Base
-  protect_from_forgery
-
+  skip_before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
+  #protect_from_forgery
+  PAGE_SIZE = 3
   #after_filter :store_location
+
 
   def store_location
     # store last url - this is needed for post-login redirect to whatever the user last visited.

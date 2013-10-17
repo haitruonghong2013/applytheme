@@ -9,7 +9,13 @@ Ipadapp::Application.routes.draw do
   resources :meetings
 
 
-  resources :clients
+  resources :clients do
+    collection do
+      post 'new_client'=>'clients#create'
+      get 'my_client'=>'clients#get_my_client'
+      get 'clients_by_staff' => 'clients#get_all_clients_by_user'
+    end
+  end
 
 
   resources :posts do

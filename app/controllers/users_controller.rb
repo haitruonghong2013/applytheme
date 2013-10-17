@@ -4,7 +4,8 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!
   load_and_authorize_resource
   def index
-    @users = User.paginate(:page => params[:page], :per_page => 3)
+
+    @users = User.paginate(:page => params[:page], :per_page => params[:size]? params[:size]:PAGE_SIZE )
 
     respond_to do |format|
       format.html # index.html.erb
