@@ -17,24 +17,74 @@
   <% end %>
 </ul>
 
-<ul class="nav navbar-nav navbar-right">
+<!--<ul class="nav navbar-nav navbar-right">-->
+  <!--<% if user_signed_in? %>-->
+      <!--<li><a href="#">Welcome <%= current_user.username %></a></li>-->
+      <!--<li class="dropdown">-->
+        <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>-->
+        <!--<ul class="dropdown-menu">-->
+          <!--<li><a href="#">Edit Account</a></li>-->
+          <!--<li><%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete' %></li>-->
+        <!--</ul>-->
+      <!--</li>-->
+  <!--<% else %>-->
+      <!--<li>-->
+        <!--<%= link_to 'Sign In', new_user_session_path %>-->
+      <!--</li>-->
+      <!--<li>-->
+        <!--<%= link_to 'Sign up', new_user_registration_path %>-->
+      <!--</li>-->
+  <!--<% end %>-->
+
+
+<!--</ul>-->
+
+<ul class="nav ace-nav pull-right">
+<li class="light-blue">
   <% if user_signed_in? %>
-      <li><a href="#">Welcome <%= current_user.username %></a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Settings <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Edit Account</a></li>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete' %></li>
-        </ul>
-      </li>
-  <% else %>
-      <li>
-        <%= link_to 'Sign In', new_user_session_path %>
-      </li>
-      <li>
-        <%= link_to 'Sign up', new_user_registration_path %>
-      </li>
-  <% end %>
+  <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+    <!--<img class="nav-user-photo" src="assets/avatars/user.jpg" alt="Jason's Photo" />-->
+								<span class="user-info">
+									<small>Welcome,</small>
+                                  <%= current_user.username %>
+								</span>
 
+    <i class="icon-caret-down"></i>
+  </a>
 
+  <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer">
+    <li>
+      <a href="#">
+        <i class="icon-cog"></i>
+        Edit Account
+      </a>
+    </li>
+
+    <!--<li>-->
+      <!--<a href="#">-->
+        <!--<i class="icon-user"></i>-->
+        <!--Profile-->
+      <!--</a>-->
+    <!--</li>-->
+
+    <li class="divider"></li>
+
+    <li>
+      <!-- <%= link_to 'Sign Out', destroy_user_session_path, :method => 'delete' %> -->
+      <!--<a rel="nofollow" data-method="delete" href="/d/user/sign_out">Sign Out</a>-->
+      <a rel="nofollow" data-method="delete" href="<%= destroy_user_session_path %>">
+        <i class="icon-off"></i>
+        Sign Out
+      </a>
+    </li>
+  </ul>
+</li>
+      <% else %>
+      <li>
+      <%= link_to 'Sign In', new_user_session_path %>
+      </li>
+      <li>
+      <%= link_to 'Sign up', new_user_registration_path %>
+      </li>
+      <% end %>
 </ul>

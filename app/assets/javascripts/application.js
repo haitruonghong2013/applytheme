@@ -9,9 +9,27 @@
 //
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
+
+// require jquery
+// require jquery.ui.all
+// require jquery_ujs
+// require bootstrap
+// require_tree .
+
 //
 //= require jquery
-//= require jquery.ui.all
 //= require jquery_ujs
-//= require bootstrap
-//= require_tree .
+//= require jquery-2.0.3.min
+//= require jquery.mobile.custom.min
+//= require bootstrap.min
+//= require excanvas.min
+//= require jquery-ui-1.10.3.custom.min
+//= require jquery.ui.touch-punch.min
+//= require jquery.slimscroll.min
+//= require jquery.easy-pie-chart.min
+//= require jquery.sparkline.min
+//= require ./flot/jquery.flot.min
+//= require ./flot/jquery.flot.pie.min
+//= require ./flot/jquery.flot.resize.min
+//= require  ace-elements.min
+//= require  ace.min
