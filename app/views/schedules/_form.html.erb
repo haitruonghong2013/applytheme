@@ -85,7 +85,7 @@
 
         for (var i = 0; i < clientListAddress.length; i++) {
                 waypts.push({
-                    location:clientListAddress[i],
+                    location:clientListAddress[i]['location']['address'],
                     stopover:true});
             }
 
@@ -112,6 +112,8 @@
                     summaryPanel.innerHTML += route.legs[i].distance.text + '<br>';
                     summaryPanel.innerHTML += route.legs[i].duration.text + '<br><br>';
                 }
+                summaryPanel.innerHTML += 'Waypoint order:'+route.waypoint_order+'<br>';
+
             }
         });
 
@@ -298,17 +300,20 @@ $(function() {
         if (count == 2){
 
             initialize();
-                var i = 0;
             $('input[name="clients[]"]:checked').each(function() {
-                clientListAddress.push(js_clients_array[this.value]['location']['address']);
-                $('#clientaddressdiv').append('<input name="meeting['+i+'][id]" type="hidden" value="'+this.value+'"/>');
-                $('#clientaddressdiv').append('<input name="meeting['+i+'][address]" type="hidden" value="'+js_clients_array[this.value]["location"]["address"]+'"/>');
-                $('#clientaddressdiv').append('<input name="meeting['+i+'][meeting_time]" type="hidden" value="15:30"/>');
-                $('#clientaddressdiv').append('<input name="meeting['+i+'][duration]" type="hidden" value="30"/>');
-                i++;
+//                clientListAddress.push(js_clients_array[this.value]['location']['address']);
+                clientListAddress.push(js_clients_array[this.value]);
             });
 
             calcRoute();
+            var waypoints_order =[1,0];
+
+            for(var i=0;i<waypoints_order.length;i++){
+                $('#clientaddressdiv').append('<input name="meeting['+i+'][id]" type="hidden" value="'+clientListAddress[waypoints_order[i]]["id"]+'"/>');
+                $('#clientaddressdiv').append('<input name="meeting['+i+'][address]" type="hidden" value="'+clientListAddress[waypoints_order[i]]['location']["address"]+'"/>');
+            }
+
+
         }
     });
 

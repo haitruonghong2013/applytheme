@@ -44,8 +44,10 @@
   </tbody>
 </table>
 <br/>
-<%= raw clients.to_json(:include => {:location => { :only => [:address]}}) %>
+<!--<%= raw clients.to_json(:include => {:location => { :only => [:address]}}) %>-->
 <script>
+
+    //Update checkbox controls when click on checkbox all on Header
     $('table th input:checkbox').on('click', function () {
         var that = this;
         $(this).closest('table').find('tr > td:first-child input:checkbox')
@@ -55,6 +57,9 @@
                 });
 
     });
+
+
+    //Add all clients to array to user later for collect which clients will be choose
     var js_clients_array = [];
     var js_clients_array_temp = <%= raw @clients.to_json(:include => {:location => { :only => [:address]}}) %>;
 
