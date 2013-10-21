@@ -51,6 +51,10 @@ class SchedulesController < ApplicationController
   # POST /schedules.json
   def create
     @schedule = Schedule.new(params[:schedule])
+    start_time = DateTime.parse(params[:schedule][:schedule_date] +' '+ params[:schedule][:start_time])
+    end_time = DateTime.parse(params[:schedule][:schedule_date] +' '+ params[:schedule][:end_time])
+    @schedule.start_time = start_time
+    @schedule.end_time = end_time
     @schedule.created_by = current_user.id
     respond_to do |format|
       if @schedule.save

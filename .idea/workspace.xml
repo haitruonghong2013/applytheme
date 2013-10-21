@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43f2d8a7-962d-4719-8f0d-bb20bc32c991" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/assets/javascripts/schedules.js.coffee" afterPath="$PROJECT_DIR$/app/assets/javascripts/schedules.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/schedules/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/schedules/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/schedules.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/schedules.css.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/schedules_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/schedules_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ipadapp.iws" />
@@ -21,7 +18,7 @@
     <file path="/application.yml" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381134993957" ignored="false" />
     <file path="/20131007103755_add_authentication_token_to_users.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381142293765" ignored="false" />
     <file path="/sessions_controller.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381975820867" ignored="false" />
-    <file path="/Dummy.txt" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1382320172981" ignored="false" />
+    <file path="/Dummy.txt" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1382327571461" ignored="false" />
     <file path="/20131008110142_add_organization_id_to_users.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381230242401" ignored="false" />
     <file path="/a.sql" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381999144704" ignored="false" />
     <file path="/20131009020509_create_clients.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381284618635" ignored="false" />
@@ -29,7 +26,7 @@
     <file path="/20131009030031_create_meetings.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381287681815" ignored="false" />
     <file path="/temp.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381311007918" ignored="false" />
     <file path="/users_controller.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381979227165" ignored="false" />
-    <file path="/_form.html.erb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1382326695756" ignored="false" />
+    <file path="/_form.html.erb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1382330428258" ignored="false" />
     <file path="/user.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381999254506" ignored="false" />
     <file path="/organizations.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381306218257" ignored="false" />
     <file path="/fragment.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381312514581" ignored="false" />
@@ -39,7 +36,7 @@
     <file path="/meeting.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381315981998" ignored="false" />
     <file path="/client_note.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381311290619" ignored="false" />
     <file path="/clients_controller.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381986012567" ignored="false" />
-    <file path="/schedules_controller.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381997819355" ignored="false" />
+    <file path="/schedules_controller.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1382331573233" ignored="false" />
     <file path="/devise.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381371239537" ignored="false" />
     <file path="$PROJECT_DIR$/../customizebootstrap/app/views/layouts/application.html.erb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381461984871" ignored="false" />
     <file path="/_navigation.html.erb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1382320390039" ignored="false" />
@@ -61,7 +58,7 @@
     <file path="/push_notifications_controller.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1382001983717" ignored="false" />
     <file path="$PROJECT_DIR$/../ipadapptemp/app/controllers/posts_controller.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1382062419668" ignored="false" />
     <file path="/application.html.erb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1382066439815" ignored="false" />
-    <file path="/new.html.erb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1382323046966" ignored="false" />
+    <file path="/new.html.erb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1382327621015" ignored="false" />
     <file path="/application.css" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1382323880596" ignored="false" />
     <file path="/schedules.js.coffee" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1382325815959" ignored="false" />
     <file path="/schedules.css.scss" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1382325621018" ignored="false" />
@@ -112,7 +109,50 @@
       <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/schedules/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="166" column="72" selection-start="6209" selection-end="6209" vertical-scroll-proportion="-5.9166665">
+            <state line="194" column="86" selection-start="7332" selection-end="7332" vertical-scroll-proportion="-12.083333">
+              <folding>
+                <marker date="1382330535104" expanded="true" signature="6426:6499" placeholder="..." />
+                <marker date="1382330535104" expanded="true" signature="6731:6796" placeholder="..." />
+                <marker date="1382330535104" expanded="true" signature="7151:7216" placeholder="..." />
+                <marker date="1382330535104" expanded="true" signature="7256:7743" placeholder="..." />
+                <marker date="1382330535104" expanded="true" signature="8056:8081" placeholder="..." />
+                <marker date="1382330535104" expanded="true" signature="8119:9078" placeholder="..." />
+                <marker date="1382330535104" expanded="true" signature="8141:8170" placeholder="..." />
+                <marker date="1382330535104" expanded="true" signature="8171:8977" placeholder="..." />
+                <marker date="1382330535104" expanded="true" signature="8225:8296" placeholder="..." />
+                <marker date="1382330535104" expanded="true" signature="8445:8677" placeholder="..." />
+                <marker date="1382330535104" expanded="true" signature="8742:8876" placeholder="..." />
+                <marker date="1382330535104" expanded="true" signature="9021:9058" placeholder="..." />
+                <marker date="1382330535104" expanded="true" signature="9323:11074" placeholder="{...}" />
+                <marker date="1382330535104" expanded="true" signature="9576:10280" placeholder="{...}" />
+                <marker date="1382330535104" expanded="true" signature="9680:9712" placeholder="{...}" />
+                <marker date="1382330535104" expanded="true" signature="9716:9748" placeholder="{...}" />
+                <marker date="1382330535104" expanded="true" signature="9780:9814" placeholder="{...}" />
+                <marker date="1382330535104" expanded="true" signature="9858:10037" placeholder="{...}" />
+                <marker date="1382330535104" expanded="true" signature="10062:10274" placeholder="{...}" />
+                <marker date="1382330535104" expanded="true" signature="10157:10262" placeholder="{...}" />
+                <marker date="1382330535104" expanded="true" signature="10284:10702" placeholder="//..." />
+                <marker date="1382330535104" expanded="true" signature="10775:10814" placeholder="{...}" />
+                <marker date="1382330535104" expanded="true" signature="10858:10943" placeholder="{&quot;minuteStep&quot;: 1...}" />
+                <marker date="1382330535104" expanded="true" signature="10986:11071" placeholder="{&quot;minuteStep&quot;: 1...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="schedules_controller.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/controllers/schedules_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="58" column="43" selection-start="1792" selection-end="1792" vertical-scroll-proportion="1.4897261">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rescue.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file:///var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_controller/metal/rescue.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="0" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -121,7 +161,7 @@
       <file leaf-file-name="schedules.css.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/schedules.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="88" selection-start="406" selection-end="406" vertical-scroll-proportion="0.0">
+            <state line="16" column="42" selection-start="427" selection-end="427" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -138,10 +178,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/schedules/new.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="60" selection-start="261" selection-end="261" vertical-scroll-proportion="0.31304348">
+            <state line="8" column="95" selection-start="200" selection-end="200" vertical-scroll-proportion="-5.0">
               <folding />
             </state>
           </provider>
@@ -174,22 +214,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/push_notifications_controller.rb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/bootstrap_and_overrides.css.scss" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/applicationbk.js" />
         <option value="$PROJECT_DIR$/app/views/layouts/_navigation.html.erb" />
         <option value="$PROJECT_DIR$/app/views/clients/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/clients/_client_list.html.erb" />
         <option value="$PROJECT_DIR$/app/views/schedules/edit.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/schedules/new.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/schedules.css.scss" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/schedules.js.coffee" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
-        <option value="$PROJECT_DIR$/app/views/schedules/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/schedules.js" />
+        <option value="$PROJECT_DIR$/app/views/schedules/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/schedules/_form.html.erb" />
+        <option value="dbtable:/d16c565/39042e40-4599-4212-8c04-c220f9b723a8/ipadapp_development1..schedules" />
+        <option value="$PROJECT_DIR$/app/controllers/schedules_controller.rb" />
       </list>
     </option>
   </component>
@@ -279,29 +319,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ipadapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ipadapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -786,7 +804,11 @@
       <created>1382003767669</created>
       <updated>1382003767669</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="change style of schedule screen">
+      <created>1382327573999</created>
+      <updated>1382327573999</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -813,21 +835,21 @@
     <frame x="64" y="-4" width="1303" height="773" extended-state="6" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2244582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32662538" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16175298" sideWeight="0.628483" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33227092" sideWeight="0.6114551" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26613545" sideWeight="0.7160494" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28395063" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26613545" sideWeight="0.6114551" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3885449" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25696594" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2361111" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23529412" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32817337" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28482974" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -876,7 +898,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="add push notification restful service done" />
+    <option name="LAST_COMMIT_MESSAGE" value="change style of schedule screen" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -913,36 +935,14 @@
     <MESSAGE value="add meetings of a schedule to export json" />
     <MESSAGE value="add push notification table and scaffolding" />
     <MESSAGE value="add push notification restful service done" />
+    <MESSAGE value="change style of schedule screen" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="29" />
+      <option name="time" value="31" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/bootstrap-timepicker.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="60" selection-start="351" selection-end="351" vertical-scroll-proportion="-3.389313">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/schedules/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/date-time/bootstrap-timepicker.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/clients/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="87" selection-start="92" selection-end="92" vertical-scroll-proportion="0.15345268">
@@ -989,13 +989,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/schedules/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="166" column="72" selection-start="6209" selection-end="6209" vertical-scroll-proportion="-5.9166665">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="66" selection-start="355" selection-end="355" vertical-scroll-proportion="-4.375">
@@ -1010,9 +1003,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/schedules.css.scss">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/schedules.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="88" selection-start="406" selection-end="406" vertical-scroll-proportion="0.0">
+        <state line="3" column="54" selection-start="127" selection-end="127" vertical-scroll-proportion="0.07512521">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/schedules/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="95" selection-start="200" selection-end="200" vertical-scroll-proportion="-5.0">
           <folding />
         </state>
       </provider>
@@ -1026,18 +1028,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/schedules.js">
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/schedules.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="54" selection-start="127" selection-end="127" vertical-scroll-proportion="0.07512521">
+        <state line="16" column="42" selection-start="427" selection-end="427" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/schedules/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="194" column="86" selection-start="7332" selection-end="7332" vertical-scroll-proportion="-12.083333">
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <marker date="1382330535104" expanded="true" signature="6426:6499" placeholder="..." />
+            <marker date="1382330535104" expanded="true" signature="6731:6796" placeholder="..." />
+            <marker date="1382330535104" expanded="true" signature="7151:7216" placeholder="..." />
+            <marker date="1382330535104" expanded="true" signature="7256:7743" placeholder="..." />
+            <marker date="1382330535104" expanded="true" signature="8056:8081" placeholder="..." />
+            <marker date="1382330535104" expanded="true" signature="8119:9078" placeholder="..." />
+            <marker date="1382330535104" expanded="true" signature="8141:8170" placeholder="..." />
+            <marker date="1382330535104" expanded="true" signature="8171:8977" placeholder="..." />
+            <marker date="1382330535104" expanded="true" signature="8225:8296" placeholder="..." />
+            <marker date="1382330535104" expanded="true" signature="8445:8677" placeholder="..." />
+            <marker date="1382330535104" expanded="true" signature="8742:8876" placeholder="..." />
+            <marker date="1382330535104" expanded="true" signature="9021:9058" placeholder="..." />
+            <marker date="1382330535104" expanded="true" signature="9323:11074" placeholder="{...}" />
+            <marker date="1382330535104" expanded="true" signature="9576:10280" placeholder="{...}" />
+            <marker date="1382330535104" expanded="true" signature="9680:9712" placeholder="{...}" />
+            <marker date="1382330535104" expanded="true" signature="9716:9748" placeholder="{...}" />
+            <marker date="1382330535104" expanded="true" signature="9780:9814" placeholder="{...}" />
+            <marker date="1382330535104" expanded="true" signature="9858:10037" placeholder="{...}" />
+            <marker date="1382330535104" expanded="true" signature="10062:10274" placeholder="{...}" />
+            <marker date="1382330535104" expanded="true" signature="10157:10262" placeholder="{...}" />
+            <marker date="1382330535104" expanded="true" signature="10284:10702" placeholder="//..." />
+            <marker date="1382330535104" expanded="true" signature="10775:10814" placeholder="{...}" />
+            <marker date="1382330535104" expanded="true" signature="10858:10943" placeholder="{&quot;minuteStep&quot;: 1...}" />
+            <marker date="1382330535104" expanded="true" signature="10986:11071" placeholder="{&quot;minuteStep&quot;: 1...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/schedules/new.html.erb">
+    <entry file="file:///var/lib/gems/1.9.1/gems/actionpack-3.2.13/lib/action_controller/metal/rescue.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="60" selection-start="261" selection-end="261" vertical-scroll-proportion="0.31304348">
+        <state line="30" column="0" selection-start="1023" selection-end="1023" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/d16c565/39042e40-4599-4212-8c04-c220f9b723a8/ipadapp_development1..schedules">
+      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/schedules_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="43" selection-start="1792" selection-end="1792" vertical-scroll-proportion="1.4897261">
           <folding />
         </state>
       </provider>
