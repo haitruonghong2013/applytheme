@@ -58,6 +58,13 @@
         directionsDisplay.setMap(mapCanvas);
     }
 
+    function addHiddenControls(waypoints_order){
+        for(var i=0;i<waypoints_order.length;i++){
+            $('#clientaddressdiv').append('<input name="meeting['+i+'][id]" type="hidden" value="'+clientListAddress[waypoints_order[i]]["id"]+'"/>');
+            $('#clientaddressdiv').append('<input name="meeting['+i+'][address]" type="hidden" value="'+clientListAddress[waypoints_order[i]]['location']["address"]+'"/>');
+        }
+    }
+
     function calcRoute() {
 
         // First, remove any existing markers from the map.
@@ -113,6 +120,7 @@
                     summaryPanel.innerHTML += route.legs[i].duration.text + '<br><br>';
                 }
                 summaryPanel.innerHTML += 'Waypoint order:'+route.waypoint_order+'<br>';
+                addHiddenControls(route.waypoint_order);
 
             }
         });
@@ -306,16 +314,9 @@ $(function() {
             });
 
             calcRoute();
-            var waypoints_order =[1,0];
-
-            for(var i=0;i<waypoints_order.length;i++){
-                $('#clientaddressdiv').append('<input name="meeting['+i+'][id]" type="hidden" value="'+clientListAddress[waypoints_order[i]]["id"]+'"/>');
-                $('#clientaddressdiv').append('<input name="meeting['+i+'][address]" type="hidden" value="'+clientListAddress[waypoints_order[i]]['location']["address"]+'"/>');
-            }
-
-
         }
     });
+
 
     //add clients model objects to javascript collection
 

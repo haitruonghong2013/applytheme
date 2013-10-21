@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43f2d8a7-962d-4719-8f0d-bb20bc32c991" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/clients/_client_list.html.erb" afterPath="$PROJECT_DIR$/app/views/clients/_client_list.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/schedules/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/schedules/_form.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/schedules_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/schedules_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ipadapp.iws" />
@@ -18,7 +18,7 @@
     <file path="/application.yml" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381134993957" ignored="false" />
     <file path="/20131007103755_add_authentication_token_to_users.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381142293765" ignored="false" />
     <file path="/sessions_controller.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381975820867" ignored="false" />
-    <file path="/Dummy.txt" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1382350020501" ignored="false" />
+    <file path="/Dummy.txt" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1382352620361" ignored="false" />
     <file path="/20131008110142_add_organization_id_to_users.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381230242401" ignored="false" />
     <file path="/a.sql" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381999144704" ignored="false" />
     <file path="/20131009020509_create_clients.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381284618635" ignored="false" />
@@ -26,17 +26,17 @@
     <file path="/20131009030031_create_meetings.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381287681815" ignored="false" />
     <file path="/temp.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381311007918" ignored="false" />
     <file path="/users_controller.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381979227165" ignored="false" />
-    <file path="/_form.html.erb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1382352234214" ignored="false" />
+    <file path="/_form.html.erb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1382353997429" ignored="false" />
     <file path="/user.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381999254506" ignored="false" />
     <file path="/organizations.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381306218257" ignored="false" />
-    <file path="/fragment.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381312514581" ignored="false" />
+    <file path="/fragment.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1382355085393" ignored="false" />
     <file path="/client.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381742048131" ignored="false" />
     <file path="/location.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381738192949" ignored="false" />
     <file path="/schedule.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381746710137" ignored="false" />
     <file path="/meeting.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381315981998" ignored="false" />
     <file path="/client_note.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381311290619" ignored="false" />
     <file path="/clients_controller.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381986012567" ignored="false" />
-    <file path="/schedules_controller.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1382331573233" ignored="false" />
+    <file path="/schedules_controller.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1382355028595" ignored="false" />
     <file path="/devise.rb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381371239537" ignored="false" />
     <file path="$PROJECT_DIR$/../customizebootstrap/app/views/layouts/application.html.erb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1381461984871" ignored="false" />
     <file path="/_navigation.html.erb" changelist="43f2d8a7-962d-4719-8f0d-bb20bc32c991" time="1382320390039" ignored="false" />
@@ -97,10 +97,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_form.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/schedules/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="312" column="144" selection-start="11770" selection-end="11770" vertical-scroll-proportion="0.6117647">
+            <state line="122" column="58" selection-start="4715" selection-end="4715" vertical-scroll-proportion="-7.7083335">
               <folding />
             </state>
           </provider>
@@ -115,10 +115,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="schedules_controller.rb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="schedules_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/schedules_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="137" selection-start="690" selection-end="776" vertical-scroll-proportion="0.0">
+            <state line="63" column="24" selection-start="1944" selection-end="1944" vertical-scroll-proportion="0.3310811">
               <folding />
             </state>
           </provider>
@@ -163,10 +163,10 @@
         <option value="$PROJECT_DIR$/app/assets/javascripts/schedules.js" />
         <option value="$PROJECT_DIR$/app/views/schedules/new.html.erb" />
         <option value="dbtable:/d16c565/39042e40-4599-4212-8c04-c220f9b723a8/ipadapp_development1..schedules" />
-        <option value="$PROJECT_DIR$/app/controllers/schedules_controller.rb" />
         <option value="dbtable:/d16c565/39042e40-4599-4212-8c04-c220f9b723a8/ipadapp_development1..meetings" />
         <option value="$PROJECT_DIR$/app/views/clients/_client_list.html.erb" />
         <option value="$PROJECT_DIR$/app/views/schedules/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/schedules_controller.rb" />
       </list>
     </option>
   </component>
@@ -739,7 +739,11 @@
       <created>1382350021729</created>
       <updated>1382350021729</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="apply implement Google API functions">
+      <created>1382352624305</created>
+      <updated>1382352624305</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -769,10 +773,10 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32972136" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2244582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32662538" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33227092" sideWeight="0.6114551" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33227092" sideWeight="0.6114551" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27091634" sideWeight="0.52006173" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.47993827" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27091634" sideWeight="0.52012384" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.47987616" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25696594" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23529412" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -871,7 +875,14 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="32" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="ruby-line">
+          <url>file://$PROJECT_DIR$/app/controllers/schedules_controller.rb</url>
+          <line>63</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="34" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -961,13 +972,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/schedules_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="137" selection-start="690" selection-end="776" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/clients/_client_list.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="66" column="24" selection-start="1980" selection-end="1996" vertical-scroll-proportion="-19.791666">
@@ -977,7 +981,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/schedules/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="312" column="144" selection-start="11770" selection-end="11770" vertical-scroll-proportion="0.6117647">
+        <state line="122" column="58" selection-start="4715" selection-end="4715" vertical-scroll-proportion="-7.7083335">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/schedules_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="63" column="24" selection-start="1944" selection-end="1944" vertical-scroll-proportion="0.3310811">
           <folding />
         </state>
       </provider>

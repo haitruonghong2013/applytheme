@@ -56,6 +56,16 @@ class SchedulesController < ApplicationController
     @schedule.start_time = start_time
     @schedule.end_time = end_time
     @schedule.created_by = current_user.id
+
+    #add meetings
+    if params[:meeting] and params[:meeting].length != 0
+      params[:meeting].each do |meeting_item|
+        meeting = Meeting.new()
+        meeting.client_id = meeting_item[1][:id]
+        meeting.save
+      end
+    end
+
     respond_to do |format|
       if @schedule.save
         format.html { redirect_to schedules_url, notice: 'Schedule was successfully created.' }
