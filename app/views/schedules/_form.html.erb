@@ -4,18 +4,39 @@
     var directionsService = new google.maps.DirectionsService();
     var mapCanvas;
 
-    //change polyline color
-    var polylineOptionsActual = new google.maps.Polyline({
+//    //change polyline color
+//    var polylineOptionsActual = new google.maps.Polyline({
+//        strokeColor: '#3C00FF',
+//        strokeOpacity: 0.5,
+//        strokeWeight: 3
+//    });
+
+ //Fix bug change color of polylineOptionActual
+//    olyOptionsActual and polyOptionsPlan should be polylineOptions
+//    anonymous objects, not Polylines.
+//
+//            Javascript Object properties are case sensitive:
+//            so not:
+//            strokecolor: '#FF0000',
+//                    strokeopacity: 1.0,
+//            strokeweight: 10
+//    use:
+//            strokeColor: '#FF0000',
+//                    strokeOpacity: 1.0,
+//            strokeWeight: 10
+    var polylineOptionsActual = {
         strokeColor: '#3C00FF',
         strokeOpacity: 0.5,
         strokeWeight: 3
-    });
-
+    };
 
     var rendererOptions = {
         polylineOptions:polylineOptionsActual,
         suppressMarkers : true
     }
+
+    var clientObjects = [];
+    var clientListAddress = [];
 
     var stepDisplay;
     var markerArray = [];
@@ -47,17 +68,26 @@
         // Now, clear the array itself.
         markerArray = [];
 
-        var start = document.getElementById('start').value;
-        var end = document.getElementById('end').value;
+//        var start = document.getElementById('start').value;
+//        var end = document.getElementById('end').value;
+
+        var start = 'Ha Noi, Viet Nam';
+        var end = 'Ho Chi Minh, Viet Nam';
         var waypts = [];
-        var checkboxArray = document.getElementById('waypoints');
-        for (var i = 0; i < checkboxArray.length; i++) {
-            if (checkboxArray.options[i].selected == true) {
+//        var checkboxArray = document.getElementById('waypoints');
+//        for (var i = 0; i < checkboxArray.length; i++) {
+//            if (checkboxArray.options[i].selected == true) {
+//                waypts.push({
+//                    location:checkboxArray[i].value,
+//                    stopover:true});
+//            }
+//        }
+
+        for (var i = 0; i < clientListAddress.length; i++) {
                 waypts.push({
-                    location:checkboxArray[i].value,
+                    location:clientListAddress[i],
                     stopover:true});
             }
-        }
 
         var request = {
             origin: start,
@@ -147,8 +177,6 @@
         });
     }
 
-//    google.maps.event.addDomListener(window, 'load', initialize);
-
 </script>
 </head>
 <body>
@@ -192,8 +220,7 @@
 															</span>
         </div>
       </div>
-      <!-- <%= f.input :start_time,:as=>:string, input_html: { :class=> 'time-picker'} %>
-      <%= f.input :end_time,:as=>:string, input_html: { :class=> 'time-picker'} %> -->
+
       <%= f.input :average_meeting_duration, :autofocus => true %>
       <%= f.input :transport %>
       <%= f.input :speed %>
@@ -212,29 +239,29 @@
       <div id="clientaddressdiv"></div>
       <div id="map-canvas" style="width:800px;height:600px;"></div>
       <div id="control_panel">
-        <div style="margin:20px;border-width:2px;">
-          <b>Start:</b>
-          <select id="start">
-            <option value="Ha Noi">Ha Noi</option>
-          </select>
-          <br>
-          <b>Waypoints:</b> <br>
-          <i>(Ctrl-Click for multiple selection)</i> <br>
-          <select multiple id="waypoints">
-            <option value="Ninh Binh">Ninh Binh</option>
-            <option value="Thanh Hoa">Thanh Hoa</option>
-            <option value="Nghe An">Nghe An</option>
-            <option value="Hue">Hue</option>
-          </select>
-          <br>
-          <b>End:</b>
-          <select id="end">
-            <option value="Da Nang">Da Nang</option>
-            <option value="Ho Chi Minh">Ho Chi Minh</option>
-          </select>
-          <br>
-          <input type="button" value="Get Way" onclick="calcRoute();">
-        </div>
+        <!--<div style="margin:20px;border-width:2px;">-->
+          <!--<b>Start:</b>-->
+          <!--<select id="start">-->
+            <!--<option value="Ha Noi">Ha Noi</option>-->
+          <!--</select>-->
+          <!--<br>-->
+          <!--<b>Waypoints:</b> <br>-->
+          <!--<i>(Ctrl-Click for multiple selection)</i> <br>-->
+          <!--<select multiple id="waypoints">-->
+            <!--<option value="Ninh Binh">Ninh Binh</option>-->
+            <!--<option value="Thanh Hoa">Thanh Hoa</option>-->
+            <!--<option value="Nghe An">Nghe An</option>-->
+            <!--<option value="Hue">Hue</option>-->
+          <!--</select>-->
+          <!--<br>-->
+          <!--<b>End:</b>-->
+          <!--<select id="end">-->
+            <!--<option value="Da Nang">Da Nang</option>-->
+            <!--<option value="Ho Chi Minh">Ho Chi Minh</option>-->
+          <!--</select>-->
+          <!--<br>-->
+          <!--<input type="button" value="Get Way" onclick="calcRoute();">-->
+        <!--</div>-->
         <div id="directions_panel" style="margin:20px;background-color:#FFEE77;"></div>
       </div>
       <%= f.button :submit, :class => 'btn-primary' %>
@@ -246,8 +273,6 @@
 
 <script>
 $(function() {
-
-    var clientListAddress = [];
     var $pages = $(".steps-content").children("div"),
             $steps = $(".steps-wizard").children("div"),
             totalPages = $pages.length,
@@ -275,13 +300,20 @@ $(function() {
             initialize();
                 var i = 0;
             $('input[name="clients[]"]:checked').each(function() {
-                clientListAddress.push(this.value);
-//                alert(this.value);
-                $('#clientaddressdiv').append('<input name="meeting['+i+'][address]" type="text" value="'+this.value+'"/>');
+                clientListAddress.push(js_clients_array[this.value]['location']['address']);
+                $('#clientaddressdiv').append('<input name="meeting['+i+'][id]" type="hidden" value="'+this.value+'"/>');
+                $('#clientaddressdiv').append('<input name="meeting['+i+'][address]" type="hidden" value="'+js_clients_array[this.value]["location"]["address"]+'"/>');
+                $('#clientaddressdiv').append('<input name="meeting['+i+'][meeting_time]" type="hidden" value="15:30"/>');
+                $('#clientaddressdiv').append('<input name="meeting['+i+'][duration]" type="hidden" value="30"/>');
                 i++;
             });
+
+            calcRoute();
         }
     });
+
+    //add clients model objects to javascript collection
+
 
 //    $("input.datetimepicker").each(function(i) {
 //        return $(this).datetimepicker({
@@ -311,17 +343,6 @@ $(function() {
         showSeconds: true,
         showMeridian: false
     });
-
-//    var addressValues = new Array();
-//    $.each($("input[name='clients[]']:checked"), function() {
-//
-//        addressValues.push($(this).val());
-//        // or you can do something to the actual checked checkboxes by working directly with  'this'
-//        // something like $(this).hide() (only something useful, probably) :P
-//    });
-//    alert(addressValues);
-
-
 });
 
 </script>

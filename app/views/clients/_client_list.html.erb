@@ -24,10 +24,9 @@
   <tbody>
   <% clients.each do |client| %>
       <tr>
-        <!--<td><%= check_box_tag 'clients[]', client.location ? client.location.address : '' %></td>-->
         <td class="center">
           <label>
-            <%= check_box_tag 'clients[]', client.location ? client.location.address : '' %>
+            <%= check_box_tag 'clients[]', client.id %>
             <span class="lbl"></span>
           </label>
         </td>
@@ -45,6 +44,7 @@
   </tbody>
 </table>
 <br/>
+<%= raw clients.to_json(:include => {:location => { :only => [:address]}}) %>
 <script>
     $('table th input:checkbox').on('click', function () {
         var that = this;
@@ -55,4 +55,10 @@
                 });
 
     });
+    var js_clients_array = [];
+    var js_clients_array_temp = <%= raw @clients.to_json(:include => {:location => { :only => [:address]}}) %>;
+
+    for(var i=0;i < js_clients_array_temp.length;i++){
+        js_clients_array[js_clients_array_temp[i].id] = js_clients_array_temp[i];
+    }
 </script>
