@@ -25,7 +25,7 @@
     <td><%= client.email %></td>
     <td><%= client.country %></td>
     <td><%= client.city %></td>
-    <td><%= client.location.address %></td>
+    <td><%= client.location ? client.location.address : '' %></td>
     <td><%= client.age %></td>
     <td><%= client.sex %></td>
     <td><%= client.user ? client.user.username : '' %></td>
@@ -36,6 +36,9 @@
 <% end %>
   </tbody>
 </table>
+<div class="digg_pagination" style="background: transparent;">
+  <%= will_paginate @clients %>
+</div>
 
 <br />
 

@@ -4,8 +4,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= content_for?(:title) ? yield(:title) : "IpadApp" %></title>
   <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "IpadApp" %>">
-  <%= stylesheet_link_tag "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag 'application' %>
+  <%= yield :javascripts %>
+  <%= stylesheet_link_tag 'application', :media => "all" %>
+  <%= yield :stylesheets %>
   <%= csrf_meta_tags %>
   <%= yield(:head) %>
 </head>

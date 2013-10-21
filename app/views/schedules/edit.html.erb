@@ -1,3 +1,9 @@
+<% content_for :stylesheets do %>
+    <%= stylesheet_link_tag 'schedules' %>
+<% end %>
+<% content_for :javascripts do %>
+    <%= javascript_include_tag 'schedules' %>
+<% end %>
 <h1>Editing schedule</h1>
 
 <%= render 'form' %>
