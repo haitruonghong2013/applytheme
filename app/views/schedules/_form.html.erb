@@ -209,6 +209,7 @@
     </div>
     <!-- STEP 3 -->
     <div class="step3-content">
+      <div id="clientaddressdiv"></div>
       <div id="map-canvas" style="width:800px;height:600px;"></div>
       <div id="control_panel">
         <div style="margin:20px;border-width:2px;">
@@ -272,11 +273,12 @@ $(function() {
         if (count == 2){
 
             initialize();
-
+                var i = 0;
             $('input[name="clients[]"]:checked').each(function() {
                 clientListAddress.push(this.value);
 //                alert(this.value);
-
+                $('#clientaddressdiv').append('<input name="meeting['+i+'][address]" type="text" value="'+this.value+'"/>');
+                i++;
             });
         }
     });
@@ -308,7 +310,18 @@ $(function() {
         minuteStep: 1,
         showSeconds: true,
         showMeridian: false
-    })
+    });
+
+//    var addressValues = new Array();
+//    $.each($("input[name='clients[]']:checked"), function() {
+//
+//        addressValues.push($(this).val());
+//        // or you can do something to the actual checked checkboxes by working directly with  'this'
+//        // something like $(this).hide() (only something useful, probably) :P
+//    });
+//    alert(addressValues);
+
+
 });
 
 </script>
