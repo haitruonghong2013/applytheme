@@ -167,8 +167,8 @@
   <div class="steps-content">
     <!-- STEP 1 -->
     <div class="step1-content content-active">
-      <%= f.input :start_time ,:as=>:datetimepicker %>
-      <%= f.input :end_time,:as => :datepicker %>
+      <%= f.input :start_time,:as=>:string, input_html: { :class=> 'date-picker','data-date-format'=>"dd-mm-yyyy"} %>
+      <%= f.input :end_time,:as=>:string, input_html: { :class=> 'date-picker','data-date-format'=>"dd-mm-yyyy"} %>
       <%= f.input :average_meeting_duration, :autofocus => true %>
       <%= f.input :transport %>
       <%= f.input :speed %>
@@ -257,18 +257,23 @@ $(function() {
         }
     });
 
-    $("input.datetimepicker").each(function(i) {
-        return $(this).datetimepicker({
-            dateFormat: "yy-mm-dd",
-            timeFormat: "hh:mm tt"
-        });
-    });
-    $("input.datepicker").each(function(i) {
-        return $(this).datepicker({
-            altFormat: "yy-mm-dd",
-            dateFormat: "mm/dd/yy",
-            altField: $(this).next()
-        });
+//    $("input.datetimepicker").each(function(i) {
+//        return $(this).datetimepicker({
+//            dateFormat: "yy-mm-dd",
+//            timeFormat: "hh:mm tt"
+//        });
+//    });
+//    $("input.datepicker").each(function(i) {
+//        return $(this).datepicker({
+//            altFormat: "yy-mm-dd",
+//            dateFormat: "mm/dd/yy",
+//            altField: $(this).next()
+//        });
+//    })
+// ;
+    $('.date-picker').datepicker().next().on(ace.click_event, function(){
+        $(this).prev().focus();
     });
 });
+
 </script>

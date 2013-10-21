@@ -15,7 +15,10 @@
  * Basic style
  *= require bootstrap.min
  *= require bootstrap-responsive.min
+ *= require datepicker
+ *= require bootstrap-timepicker
  *= require font-awesome.min
+
  *
  *ACE style
  *= require ace.min
