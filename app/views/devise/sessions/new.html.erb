@@ -32,10 +32,10 @@
   <div class="center">
     <h1>
       <i class="icon-leaf green"></i>
-      <span class="red">Ace</span>
-      <span class="white">Application</span>
+      <span class="red">IpadApp</span>
+      <span class="white"> Application</span>
     </h1>
-    <h4 class="blue">&copy; Company Name</h4>
+    <h4 class="blue">&copy; Ipad App</h4>
   </div>
 </div>
 
@@ -46,25 +46,26 @@
     <div id="login-box" class="login-box visible widget-box no-border">
       <div class="widget-body">
         <div class="widget-main">
+
           <h4 class="header blue lighter bigger">
             <i class="icon-coffee green"></i>
             Please Enter Your Information
           </h4>
 
           <div class="space-6"></div>
-
-          <form />
+          <%= render 'layouts/messages' %>
+          <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => {:class => 'form-vertical' }) do |f| %>
           <fieldset>
             <label>
 															<span class="block input-icon input-icon-right">
-																<input type="text" class="span12" placeholder="Username" />
+																<input type="text" class="span12" placeholder="Username" name="user[login]" id="user_login" autofocus="autofocus" />
 																<i class="icon-user"></i>
 															</span>
             </label>
 
             <label>
 															<span class="block input-icon input-icon-right">
-																<input type="password" class="span12" placeholder="Password" />
+																<input type="password" class="span12" placeholder="Password" name="user[password]" id="user_password"/>
 																<i class="icon-lock"></i>
 															</span>
             </label>
@@ -73,11 +74,13 @@
 
             <div class="clearfix">
               <label class="inline">
-                <input type="checkbox" />
+                <!--<input type="checkbox" />-->
+                <input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me" class="boolean optional">
                 <span class="lbl"> Remember Me</span>
               </label>
 
-              <button onclick="return false;" class="width-35 pull-right btn btn-small btn-primary">
+              <!--<input type="submit" value="Sign in" name="commit" class="btn btn-primary">-->
+              <button type="submit" class="width-35 pull-right btn btn-small btn-primary">
                 <i class="icon-key"></i>
                 Login
               </button>
@@ -85,25 +88,25 @@
 
             <div class="space-4"></div>
           </fieldset>
-          </form>
+          <% end %>
 
-          <div class="social-or-login center">
-            <span class="bigger-110">Or Login Using</span>
-          </div>
+          <!--<div class="social-or-login center">-->
+            <!--<span class="bigger-110">Or Login Using</span>-->
+          <!--</div>-->
 
-          <div class="social-login center">
-            <a class="btn btn-primary">
-              <i class="icon-facebook"></i>
-            </a>
+          <!--<div class="social-login center">-->
+            <!--<a class="btn btn-primary">-->
+              <!--<i class="icon-facebook"></i>-->
+            <!--</a>-->
 
-            <a class="btn btn-info">
-              <i class="icon-twitter"></i>
-            </a>
+            <!--<a class="btn btn-info">-->
+              <!--<i class="icon-twitter"></i>-->
+            <!--</a>-->
 
-            <a class="btn btn-danger">
-              <i class="icon-google-plus"></i>
-            </a>
-          </div>
+            <!--<a class="btn btn-danger">-->
+              <!--<i class="icon-google-plus"></i>-->
+            <!--</a>-->
+          <!--</div>-->
         </div><!--/widget-main-->
 
         <div class="toolbar clearfix">
