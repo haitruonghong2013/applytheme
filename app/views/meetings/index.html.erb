@@ -1,38 +1,256 @@
-<h1>Listing meetings</h1>
-
-<table class="table table-hover table-condensed">
-  <thead>
-  <tr>
-    <th>Client</th>
-    <th>User</th>
-    <th>Meeting time</th>
-    <th>Meeting duration</th>
-    <th>Status</th>
-    <th>Schedule</th>
-    <th>Created by</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-         </thead>
-  <tbody>
-<% @meetings.each do |meeting| %>
-  <tr>
-    <td><%= meeting.client ? meeting.client.name : '' %></td>
-    <td><%= meeting.user ? meeting.user.username : '' %></td>
-    <td><%= meeting.meeting_time %></td>
-    <td><%= meeting.meeting_duration %></td>
-    <td><%= meeting.status %></td>
-    <td><%= meeting.schedule_id %></td>
-    <td><%= meeting.owner_user ? meeting.owner_user.username : '' %></td>
-    <td><%= link_to 'Show', meeting %></td>
-    <td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>
-    <td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+<% content_for :stylesheets do %>
+    <%= stylesheet_link_tag 'meetings' %>
 <% end %>
-  </tbody>
-</table>
+<% content_for :javascripts do %>
+    <%= javascript_include_tag 'meetings' %>
+<% end %>
+<!--<h1>Listing meetings</h1>-->
 
-<br />
+<!--<table class="table table-hover table-condensed">-->
+  <!--<thead>-->
+  <!--<tr>-->
+    <!--<th>Client</th>-->
+    <!--<th>User</th>-->
+    <!--<th>Meeting time</th>-->
+    <!--<th>Meeting duration</th>-->
+    <!--<th>Status</th>-->
+    <!--<th>Schedule</th>-->
+    <!--<th>Created by</th>-->
+    <!--<th></th>-->
+    <!--<th></th>-->
+    <!--<th></th>-->
+  <!--</tr>-->
+         <!--</thead>-->
+  <!--<tbody>-->
+<!--<% @meetings.each do |meeting| %>-->
+  <!--<tr>-->
+    <!--<td><%= meeting.client ? meeting.client.name : '' %></td>-->
+    <!--<td><%= meeting.user ? meeting.user.username : '' %></td>-->
+    <!--<td><%= meeting.meeting_time %></td>-->
+    <!--<td><%= meeting.meeting_duration %></td>-->
+    <!--<td><%= meeting.status %></td>-->
+    <!--<td><%= meeting.schedule_id %></td>-->
+    <!--<td><%= meeting.owner_user ? meeting.owner_user.username : '' %></td>-->
+    <!--<td><%= link_to 'Show', meeting %></td>-->
+    <!--<td><%= link_to 'Edit', edit_meeting_path(meeting) %></td>-->
+    <!--<td><%= link_to 'Destroy', meeting, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+  <!--</tr>-->
+<!--<% end %>-->
+  <!--</tbody>-->
+<!--</table>-->
 
-<!--<%= link_to 'New Meeting', new_meeting_path %> -->
+<!--<br />-->
+
+<div class="page-content">
+  <div class="page-header position-relative">
+    <h1>
+      Meetings Calendar
+    </h1>
+  </div><!--/.page-header-->
+
+  <div class="row-fluid">
+    <div class="span12">
+      <!--PAGE CONTENT BEGINS-->
+
+      <div class="row-fluid">
+        <div class="span10">
+          <div class="space"></div>
+
+          <div id="calendar"></div>
+        </div>
+
+        <!--<div class="span3">-->
+          <!--<div class="widget-box transparent">-->
+            <!--<div class="widget-header">-->
+              <!--<h4>Draggable events</h4>-->
+            <!--</div>-->
+
+            <!--<div class="widget-main">-->
+              <!--<div id="external-events">-->
+                <!--<div class="external-event label-grey" data-class="label-grey">-->
+                  <!--<i class="icon-move"></i>-->
+                  <!--My Event 1-->
+                <!--</div>-->
+
+                <!--<div class="external-event label-success" data-class="label-success">-->
+                  <!--<i class="icon-move"></i>-->
+                  <!--My Event 2-->
+                <!--</div>-->
+
+                <!--<div class="external-event label-important" data-class="label-important">-->
+                  <!--<i class="icon-move"></i>-->
+                  <!--My Event 3-->
+                <!--</div>-->
+
+                <!--<div class="external-event label-purple" data-class="label-purple">-->
+                  <!--<i class="icon-move"></i>-->
+                  <!--My Event 4-->
+                <!--</div>-->
+
+                <!--<div class="external-event label-yellow" data-class="label-yellow">-->
+                  <!--<i class="icon-move"></i>-->
+                  <!--My Event 5-->
+                <!--</div>-->
+
+                <!--<div class="external-event label-pink" data-class="label-pink">-->
+                  <!--<i class="icon-move"></i>-->
+                  <!--My Event 6-->
+                <!--</div>-->
+
+                <!--<div class="external-event label-info" data-class="label-info">-->
+                  <!--<i class="icon-move"></i>-->
+                  <!--My Event 7-->
+                <!--</div>-->
+
+                <!--<label>-->
+                  <!--<input type="checkbox" class="ace-checkbox" id="drop-remove" />-->
+                  <!--<span class="lbl"> Remove after drop</span>-->
+                <!--</label>-->
+              <!--</div>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      </div>
+
+      <!--PAGE CONTENT ENDS-->
+    </div><!--/.span-->
+  </div><!--/.row-fluid-->
+</div><!--/.page-content-->
+
+<script type="text/javascript">
+    //Add all clients to array to user later for collect which clients will be choose
+    var js_meetings_array = <%= raw @meetings.to_json(:include => :client) %>;
+
+//    for(var i=0;i < js_meetings_array_temp.length;i++){
+//        js_meetings_array[js_meetings_array_temp[i].id] = js_meetings_array_temp[i];
+//    }
+    $(function() {
+
+        /* initialize the external events
+         -----------------------------------------------------------------*/
+
+        $('#external-events div.external-event').each(function() {
+
+            // create an Event Object (http://arshaw.com/fullcalendar/docs/event_data/Event_Object/)
+            // it doesn't need to have a start or end
+            var eventObject = {
+                title: $.trim($(this).text()) // use the element's text as the event title
+            };
+
+            // store the Event Object in the DOM element so we can get to it later
+            $(this).data('eventObject', eventObject);
+
+            // make the event draggable using jQuery UI
+            $(this).draggable({
+                zIndex: 999,
+                revert: true,      // will cause the event to go back to its
+                revertDuration: 0  //  original position after the drag
+            });
+
+        });
+
+
+
+
+        /* initialize the calendar
+         -----------------------------------------------------------------*/
+
+//        var date = new Date();
+//        var d = date.getDate();
+//        var m = date.getMonth();
+//        var y = date.getFullYear();
+//        var date = moment("2013-10-23 11:01:00");
+//        alert(date.toDate());
+        var js_events_array = [];
+        var eventsObj;
+        for (var i = 0;i <js_meetings_array.length;i++){
+            eventsObj = new Object();
+//            alert(js_meetings_array[i]['client'].name);
+            eventsObj.title = js_meetings_array[i]['client'].name +" client ";
+//            alert(moment(js_meetings_array[i].meeting_time).toDate());
+            eventsObj.start = moment(js_meetings_array[i].meeting_time).toDate();
+            eventsObj.allDay = false;
+            eventsObj.id = js_meetings_array[i].id;
+            eventsObj.url = '/meetings/'+eventsObj.id ;
+            js_events_array.push(eventsObj);
+        }
+
+//        var d = date.day();
+//        var m = date.month();
+//        var y = date.year();
+
+
+        var calendar = $('#calendar').fullCalendar({
+            buttonText: {
+                prev: '<i class="icon-chevron-left"></i>',
+                next: '<i class="icon-chevron-right"></i>'
+            },
+
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            events: js_events_array,
+            editable: false,
+            droppable: false, // this allows things to be dropped onto the calendar !!!
+            drop: function(date, allDay) { // this function is called when something is dropped
+
+                // retrieve the dropped element's stored Event Object
+                var originalEventObject = $(this).data('eventObject');
+                var $extraEventClass = $(this).attr('data-class');
+
+
+                // we need to copy it, so that multiple events don't have a reference to the same object
+                var copiedEventObject = $.extend({}, originalEventObject);
+
+                // assign it the date that was reported
+                copiedEventObject.start = date;
+                copiedEventObject.allDay = allDay;
+                if($extraEventClass) copiedEventObject['className'] = [$extraEventClass];
+
+                // render the event on the calendar
+                // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
+                $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
+
+                // is the "remove after drop" checkbox checked?
+                if ($('#drop-remove').is(':checked')) {
+                    // if so, remove the element from the "Draggable Events" list
+                    $(this).remove();
+                }
+
+            }
+            ,
+            selectable: false,
+            selectHelper: true,
+            select: function(start, end, allDay) {
+
+                bootbox.prompt("New Event Title:", function(title) {
+                    if (title !== null) {
+                        calendar.fullCalendar('renderEvent',
+                                {
+                                    title: title,
+                                    start: start,
+                                    end: end,
+                                    allDay: allDay
+                                },
+                                true // make the event "stick"
+                        );
+                    }
+                });
+
+
+                calendar.fullCalendar('unselect');
+
+            }
+            ,
+
+            eventClick: function(calEvent, jsEvent, view) {
+
+            }
+
+        });
+
+
+    })
+</script>
