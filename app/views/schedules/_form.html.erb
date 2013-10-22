@@ -125,11 +125,12 @@
 //                summaryPanel.innerHTML += 'Waypoint order:'+route.waypoint_order+'<br>';
                 var startTime = $('#schedule_start_time').val();
                 var endTime = $('#schedule_end_time').val();
+                alert("schedule_start_time : "+startTime);
 //                addTime(startTime, 30);
                 if (calculateDurationTime(route,diffBetweenTwoTimes(startTime,endTime))){
 
-                    calculateTimeAtClientMeeting(route,startTime,30);
-//                    addHiddenControls(route.waypoint_order);
+//                    calculateTimeAtClientMeeting(route,startTime,30);
+                    addHiddenControls(route.waypoint_order, calculateTimeAtClientMeeting(route,startTime,30));
                 }
                 else{
                     alert("time to travel exeed working time, please try choosing another way!");
@@ -421,18 +422,23 @@ $(function() {
 //        });
 //    })
 // ;
-    $('.date-picker').datepicker().next().on(ace.click_event, function(){
-        $(this).prev().focus();
-    });
+//    $('.date-picker').datepicker({minDate:0}).next().on(ace.click_event, function(){
+//        $(this).prev().focus();
+//    });
+    $('.date-picker').datepicker({
+        startDate: "now",
+        autoclose: true
+     });
+
     $('#schedule_start_time').timepicker({
-        minuteStep: 1,
-        showSeconds: true,
+        minuteStep: 5,
+        showSeconds: false,
         showMeridian: false
     });
 
     $('#schedule_end_time').timepicker({
-        minuteStep: 1,
-        showSeconds: true,
+        minuteStep: 5,
+        showSeconds: false,
         showMeridian: false
     });
 });

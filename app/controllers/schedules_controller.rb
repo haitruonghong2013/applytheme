@@ -65,6 +65,8 @@ class SchedulesController < ApplicationController
           params[:meeting].each do |meeting_item|
             meeting = Meeting.new()
             meeting.client_id = meeting_item[1][:id]
+            meeting.meeting_duration = meeting_item[1][:meeting_duration]
+            meeting.meeting_time = DateTime.parse(params[:schedule][:schedule_date] +' '+ meeting_item[1][:meeting_time])
             meeting.schedule = @schedule
             meeting.save
           end

@@ -1,6 +1,8 @@
 <h1>Listing schedules</h1>
 
 <table class="table table-hover table-condensed">
+  <!--<table class="table table-striped  table-hover">-->
+
   <thead>
   <tr>
     <th>Start time</th>
@@ -28,7 +30,7 @@
     <td><%= schedule.speed %></td>
     <td><%= schedule.hq_location_id %></td>
     <td><%= schedule.ending_location_id %></td>
-    <td><%= schedule.created_by %></td>
+    <td><%= schedule.own_user.username %></td>
     <td><%= schedule.assigned_id %></td>
     <td><%= schedule.schedule_date %></td>
     <td><%= link_to 'Show', schedule %></td>
