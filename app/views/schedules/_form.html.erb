@@ -1,5 +1,6 @@
 <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC7icpVNHCpzkJjilXkACn8VG9HlSe0u3s&sensor=false"></script>
 <script>
+
     var directionsDisplay;
     var directionsService = new google.maps.DirectionsService();
     var mapCanvas;
@@ -58,10 +59,12 @@
         directionsDisplay.setMap(mapCanvas);
     }
 
-    function addHiddenControls(waypoints_order){
+    function addHiddenControls(waypoints_order, timeMeetingsArray){
         for(var i=0;i<waypoints_order.length;i++){
             $('#clientaddressdiv').append('<input name="meeting['+i+'][id]" type="hidden" value="'+clientListAddress[waypoints_order[i]]["id"]+'"/>');
             $('#clientaddressdiv').append('<input name="meeting['+i+'][address]" type="hidden" value="'+clientListAddress[waypoints_order[i]]['location']["address"]+'"/>');
+            $('#clientaddressdiv').append('<input name="meeting['+i+'][meeting_duration]" type="hidden" value="'+$('#schedule_average_meeting_duration').val()+'"/>');
+            $('#clientaddressdiv').append('<input name="meeting['+i+'][meeting_time]" type="hidden" value="'+timeMeetingsArray[i].meetingTime+'"/>');
         }
     }
 
@@ -111,20 +114,22 @@
                 var summaryPanel = document.getElementById('directions_panel');
                 summaryPanel.innerHTML = '';
                 // For each route, display summary information.
-                for (var i = 0; i < route.legs.length; i++) {
-                    var routeSegment = i + 1;
-                    summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment + '</b><br>';
-                    summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
-                    summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
-                    summaryPanel.innerHTML += route.legs[i].distance.text + '<br>';
-                    summaryPanel.innerHTML += route.legs[i].duration.text + '<br><br>';
-                }
+//                for (var i = 0; i < route.legs.length; i++) {
+//                    var routeSegment = i + 1;
+//                    summaryPanel.innerHTML += '<b>Route Segment: ' + routeSegment + '</b><br>';
+//                    summaryPanel.innerHTML += route.legs[i].start_address + ' to ';
+//                    summaryPanel.innerHTML += route.legs[i].end_address + '<br>';
+//                    summaryPanel.innerHTML += route.legs[i].distance.text + '<br>';
+//                    summaryPanel.innerHTML += route.legs[i].duration.text + '<br><br>';
+//                }
 //                summaryPanel.innerHTML += 'Waypoint order:'+route.waypoint_order+'<br>';
                 var startTime = $('#schedule_start_time').val();
                 var endTime = $('#schedule_end_time').val();
-
+//                addTime(startTime, 30);
                 if (calculateDurationTime(route,diffBetweenTwoTimes(startTime,endTime))){
-                    addHiddenControls(route.waypoint_order);
+
+                    calculateTimeAtClientMeeting(route,startTime,30);
+//                    addHiddenControls(route.waypoint_order);
                 }
                 else{
                     alert("time to travel exeed working time, please try choosing another way!");
@@ -143,6 +148,13 @@
         return b.diff(a,'seconds');
     }
 
+    function addTime(timeParam, minutes){
+        var timeMoment = moment(timeParam, "HH:mm:ss");
+        timeMoment.add('minutes',minutes);
+//        alert(timeMoment.hour()+":"+timeMoment.minute()+":"+timeMoment.second());
+        return timeMoment.hour()+":"+timeMoment.minute();
+    }
+
 
     function convertSecondsToTime(raw){
 //        var raw = "-54";
@@ -159,13 +171,38 @@
         return minutes+":"+seconds
     }
 
+    function calculateTimeAtClientMeeting(route, startTime,meetingDuration){
+        var startAtApoint = startTime;
+        alert("startAtApoint : "+startAtApoint);
+        var totalTime = 0;
+        var timeMeetingsArray = [];
+        var timeMeetingObj;
+        for (var i = 0; i < route.legs.length; i++) {
+            timeMeetingObj = new Object();
+            totalTime += route.legs[i].duration.value;
+
+            //set value to timeMeeting object
+            // duration is seconds, so need convert to minutes
+            timeMeetingObj.travelTime = route.legs[i].duration.value/60;
+            timeMeetingObj.meetingTime = addTime(startAtApoint, timeMeetingObj.travelTime);
+            alert("timeMeetingObj.travelTime :"+timeMeetingObj.travelTime+
+                    "\n timeMeetingObj.meetingTime :"+timeMeetingObj.meetingTime);
+            startAtApoint = addTime(startAtApoint, meetingDuration);
+            timeMeetingsArray.push(timeMeetingObj);
+        }
+
+        return  timeMeetingsArray;
+
+    }
+
+
     function calculateDurationTime(route, maxTotalTime){
         var totalTime = 0;
 
         for (var i = 0; i < route.legs.length; i++) {
             totalTime += route.legs[i].duration.value;
         }
-        alert(totalTime);
+//        alert(totalTime);
         if (totalTime/60 > maxTotalTime){
             return false;
         }
