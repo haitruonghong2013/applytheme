@@ -75,11 +75,11 @@
         // Now, clear the array itself.
         markerArray = [];
 
-//        var start = document.getElementById('start').value;
-//        var end = document.getElementById('end').value;
+        var start = document.getElementById('schedule_hq_location_id').value;
+        var end = document.getElementById('schedule_ending_location_id').value;
 
-        var start = 'Ha Noi, Viet Nam';
-        var end = 'Ho Chi Minh, Viet Nam';
+//        var start = 'Ha Noi, Viet Nam';
+//        var end = 'Ho Chi Minh, Viet Nam';
         var waypts = [];
 //        var checkboxArray = document.getElementById('waypoints');
 //        for (var i = 0; i < checkboxArray.length; i++) {
@@ -119,11 +119,59 @@
                     summaryPanel.innerHTML += route.legs[i].distance.text + '<br>';
                     summaryPanel.innerHTML += route.legs[i].duration.text + '<br><br>';
                 }
-                summaryPanel.innerHTML += 'Waypoint order:'+route.waypoint_order+'<br>';
-                addHiddenControls(route.waypoint_order);
+//                summaryPanel.innerHTML += 'Waypoint order:'+route.waypoint_order+'<br>';
+                var startTime = $('#schedule_start_time').val();
+                var endTime = $('#schedule_end_time').val();
+
+                if (calculateDurationTime(route,diffBetweenTwoTimes(startTime,endTime))){
+                    addHiddenControls(route.waypoint_order);
+                }
+                else{
+                    alert("time to travel exeed working time, please try choosing another way!");
+                }
+
 
             }
         });
+
+    }
+
+
+    function diffBetweenTwoTimes(startTime, endTime){
+        var a = moment(startTime, "HH:mm:ss");
+        var b = moment(endTime, "HH:mm:ss");
+        return b.diff(a,'seconds');
+    }
+
+
+    function convertSecondsToTime(raw){
+//        var raw = "-54";
+        var time = parseInt(raw,10);
+        time = time < 0 ? 0 : time;
+
+        var minutes = Math.floor(time / 60);
+        var seconds = time % 60;
+
+        minutes = minutes < 10 ? "0"+minutes : minutes;
+        seconds = seconds < 10 ? "0"+seconds : seconds;
+
+//        alert(minutes+":"+seconds);
+        return minutes+":"+seconds
+    }
+
+    function calculateDurationTime(route, maxTotalTime){
+        var totalTime = 0;
+
+        for (var i = 0; i < route.legs.length; i++) {
+            totalTime += route.legs[i].duration.value;
+        }
+        alert(totalTime);
+        if (totalTime/60 > maxTotalTime){
+            return false;
+        }
+        else{
+            return true;
+        }
 
     }
 
@@ -306,6 +354,7 @@ $(function() {
         }
 
         if (count == 2){
+            diffBetweenTwoTimes();
 
             initialize();
             $('input[name="clients[]"]:checked').each(function() {
