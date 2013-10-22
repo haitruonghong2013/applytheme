@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+
   skip_before_filter :verify_authenticity_token, :if => Proc.new { |c| c.request.format == 'application/json' }
   #protect_from_forgery
   PAGE_SIZE = 10
@@ -21,6 +22,17 @@ class ApplicationController < ActionController::Base
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_path, :alert => exception.message
+  end
+
+  layout :layout
+
+  private
+
+  def layout
+    # only turn it off for login pages:
+    is_a?(Devise::SessionsController) ? false : "application"
+    # or turn layout off for every devise controller:
+    #devise_controller? && "application"
   end
 
 end
