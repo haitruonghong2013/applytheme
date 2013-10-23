@@ -44,7 +44,7 @@ Ipadapp::Application.routes.draw do
 
   #get "home/index"
 
-  devise_for :user,:path_prefix => 'd'
+  devise_for :user,:path_prefix => 'd',:controllers => { :registrations => "registrations" }
 
   #resource :users
   devise_scope :user do

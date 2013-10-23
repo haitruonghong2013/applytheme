@@ -26,7 +26,8 @@ class User < ActiveRecord::Base
   attr_accessor :login
   attr_accessible :login
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :role_ids
+  attr_accessor :current_password
+  attr_accessible :role_ids, :current_password
   attr_accessible :username, :email, :password, :password_confirmation, :remember_me
   # attr_accessible :title, :body
 
