@@ -25,3 +25,7 @@
  *= require ace-responsive.min
  *= require ace-skins.min
  */
+
+/*asterisk problems with simple form bootstrap*/
+/*try adding !important  after 0px if doesn't work*/
+abbr, accronym{ border-bottom: 0px !important; }

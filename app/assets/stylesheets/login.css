@@ -10,9 +10,9 @@
 *= require ace-responsive.min
 *= require ace-skins.min
  */
-.testImage{
-    width: 50px;
-    height: 30px;
-    background:url('/assets/rails.png');
-}
+/*.testImage{*/
+    /*width: 50px;*/
+    /*height: 30px;*/
+    /*background:url('/assets/rails.png');*/
+/*}*/
 

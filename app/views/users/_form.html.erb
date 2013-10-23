@@ -8,6 +8,17 @@
     <%= f.input :password, :required => true %>
     <%= f.input :password_confirmation, :required => true %>
     <%= f.label :select_role %><br />
-    <%= f.input :role_ids, :collection => Role.all, :as => :radio_buttons, :label_method => lambda {|t| t.name.titleize}, :label => false, :item_wrapper_class => 'inline', checked: Role.find_by_name(:saleStaff).id %>
-    <%= f.button :submit, 'Sign up', :class => 'btn-primary' %>
+
+    <%= f.input :role_ids, :collection => Role.all, :as => :radio_buttons,
+                :label_method => lambda {|t| "<span class='lbl'>".html_safe + t.name.titleize + "</span>".html_safe}, :label => false,
+                #:item_wrapper_class => 'inline',
+                checked: Role.find_by_name(:saleStaff).id
+    %>
+    <!-- combobox
+    <%= f.input :role_ids do %>
+        <%= f.select :role_ids, Role.all.map { |r| [r.name, r.id] }, include_blank: true %>
+    <% end %>
+    -->
+
+    <%= f.button :submit, :class => 'btn-primary' %>
 <% end %>
