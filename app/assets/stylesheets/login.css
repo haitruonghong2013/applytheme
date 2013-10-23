@@ -1,4 +1,5 @@
 /* Basic style
+*= require_self
 *= require bootstrap.min
 *= require bootstrap-responsive.min
 *= require font-awesome.min
@@ -9,7 +10,9 @@
 *= require ace-responsive.min
 *= require ace-skins.min
  */
-
 .testImage{
-    background:url("/assets/rails.png");
+    width: 50px;
+    height: 30px;
+    background:url('/assets/rails.png');
 }
+

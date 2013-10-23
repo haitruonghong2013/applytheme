@@ -340,8 +340,8 @@ img/hue.png: img/hue-5442c4a1b533c80e045ba26a142c1e48.png
 img/hue/index.png: img/hue-5442c4a1b533c80e045ba26a142c1e48.png
 img/saturation.png: img/saturation-ef06f89134cc9292c1d0a6918c3d1347.png
 img/saturation/index.png: img/saturation-ef06f89134cc9292c1d0a6918c3d1347.png
-login.css: login-b2da2119726e48e1952637682d64e17f.css
-login/index.css: login-b2da2119726e48e1952637682d64e17f.css
+login.css: login-c3ff581f108a86f87a07ab37c6e3ba83.css
+login/index.css: login-c3ff581f108a86f87a07ab37c6e3ba83.css
 meetings.css: meetings-7108603d93da4a4fcd3c9d703c19b02d.css
 meetings/index.css: meetings-7108603d93da4a4fcd3c9d703c19b02d.css
 schedules.css: schedules-48d1035d1123a31864f60f7762c4a8dd.css
