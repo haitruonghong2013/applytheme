@@ -71,4 +71,30 @@ Ipadapp::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
+
+
+
+  #config.cache_classes = true
+  #config.consider_all_requests_local       = false #Turn to true to get error log
+  #config.action_controller.perform_caching = true
+  #config.serve_static_assets = false
+  #config.assets.compress = true
+  #config.assets.compile = true
+  #config.assets.digest = true
+  #config.i18n.fallbacks = true
+  #config.active_support.deprecation = :notify
+  require 'tlsmail'
+  Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
+
+  config.action_mailer.default_url_options = { :host => 'www.ipadapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+      :address              => 'smtp.gmail.com',
+      :port                 => 587,
+      :domain               => 'gmail.com',
+      :user_name            => ENV['GMAIL_USERNAME'],
+      :password             => ENV['GMAIL_PASSWORD'],
+      :authentication       => 'plain',
+      :enable_starttls_auto => true
+  }
 end

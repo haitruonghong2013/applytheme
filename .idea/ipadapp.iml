@@ -68,6 +68,7 @@
     <orderEntry type="library" scope="PROVIDED" name="thor (v0.18.1, ruby-1.9.3-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="thread_safe (v0.1.3, ruby-1.9.3-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tilt (v1.4.1, ruby-1.9.3-p0) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="tlsmail (v0.0.1, ruby-1.9.3-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="treetop (v1.4.15, ruby-1.9.3-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="tzinfo (v0.3.37, ruby-1.9.3-p0) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="uglifier (v2.2.1, ruby-1.9.3-p0) [gem]" level="application" />

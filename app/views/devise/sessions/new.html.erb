@@ -74,11 +74,11 @@
             <div class="space"></div>
 
             <div class="clearfix">
-              <label class="inline">
-                <!--<input type="checkbox" />-->
-                <input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me" class="boolean optional">
-                <span class="lbl"> Remember Me</span>
-              </label>
+              <!--<label class="inline">-->
+                <!--&lt;!&ndash;<input type="checkbox" />&ndash;&gt;-->
+                <!--<input type="checkbox" value="1" name="user[remember_me]" id="user_remember_me" class="boolean optional">-->
+                <!--<span class="lbl"> Remember Me</span>-->
+              <!--</label>-->
 
               <!--<input type="submit" value="Sign in" name="commit" class="btn btn-primary">-->
               <button type="submit" class="width-35 pull-right btn btn-small btn-primary">
@@ -90,6 +90,7 @@
             <div class="space-4"></div>
           </fieldset>
           <% end %>
+          <%= render "devise/shared/links" %>
 
           <!--<div class="social-or-login center">-->
             <!--<span class="bigger-110">Or Login Using</span>-->

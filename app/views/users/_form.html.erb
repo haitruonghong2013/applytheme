@@ -1,8 +1,18 @@
-<%= simple_form_for @user do |f| %>
+<!--<form class="form-horizontal">-->
+  <!--<div class="control-group">-->
+    <!--<label for="form-field-1" class="control-label">Text Field</label>-->
+
+    <!--<div class="controls">-->
+      <!--<input type="text" placeholder="Username" id="form-field-1">-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</form>-->
+  <%= simple_form_for @user do |f| %>
   <% if @user.errors.any? %>
         <%= f.error_notification %>
         <%= display_base_errors @user %>
   <% end %>
+
     <%= f.input :username, :autofocus => true %>
     <%= f.input :email, :required => true %>
     <%= f.input :password, :required => true %>
