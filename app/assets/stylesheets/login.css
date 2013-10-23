@@ -9,3 +9,7 @@
 *= require ace-responsive.min
 *= require ace-skins.min
  */
+
+.testImage{
+    background:url("/assets/rails.png");
+}

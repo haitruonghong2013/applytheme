@@ -64,7 +64,7 @@ Ipadapp::Application.configure do
 
   config.assets.precompile += %w(application.css application.js
                                 login.css login.js
-                                scheludes.css schedules.js
+                                schedules.css schedules.js
                                 meetings.css meetings.js
                                 )
 
