@@ -90,7 +90,7 @@
             <div class="space-4"></div>
           </fieldset>
           <% end %>
-          <%= render "devise/shared/links" %>
+          <!-- <%= render "devise/shared/links" %>  -->
 
           <!--<div class="social-or-login center">-->
             <!--<span class="bigger-110">Or Login Using</span>-->
@@ -114,22 +114,29 @@
         <div class="toolbar clearfix">
           <div>
             <a href="#" onclick="show_box('forgot-box'); return false;" class="forgot-password-link">
-              <i class="icon-arrow-left"></i>
-              I forgot my password
+              <!--<i class="icon-arrow-left"></i>-->
+              Forgot my password?
             </a>
           </div>
 
-          <div>
-            <a href="#" onclick="show_box('signup-box'); return false;" class="user-signup-link">
-              I want to register
-              <i class="icon-arrow-right"></i>
-            </a>
-          </div>
+          <!--<div>-->
+            <!--<a href="#" onclick="show_box('signup-box'); return false;" class="user-signup-link">-->
+              <!--I want to register-->
+              <!--<i class="icon-arrow-right"></i>-->
+            <!--</a>-->
+          <!--</div>-->
         </div>
       </div><!--/widget-body-->
     </div><!--/login-box-->
 
-    <div id="forgot-box" class="forgot-box widget-box no-border">
+
+
+
+
+
+
+
+  <div id="forgot-box" class="forgot-box widget-box no-border">
       <div class="widget-body">
         <div class="widget-main">
           <h4 class="header red lighter bigger">
@@ -142,23 +149,25 @@
             Enter your email and to receive instructions
           </p>
 
-          <form />
+          <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+           <%= devise_error_messages! %>
           <fieldset>
             <label>
 															<span class="block input-icon input-icon-right">
-																<input type="email" class="span12" placeholder="Email" />
+																<!--<input type="email" class="span12" placeholder="Email" />-->
+                                                              <input type="email" value="" class="span12" placeholder="Email" name="user[email]" id="user_email" autofocus="autofocus">
 																<i class="icon-envelope"></i>
 															</span>
             </label>
 
             <div class="clearfix">
-              <button onclick="return false;" class="width-35 pull-right btn btn-small btn-danger">
+              <button class="width-35 pull-right btn btn-small btn-danger">
                 <i class="icon-lightbulb"></i>
                 Send Me!
               </button>
             </div>
           </fieldset>
-          </form>
+          <% end %>
         </div><!--/widget-main-->
 
         <div class="toolbar center">
