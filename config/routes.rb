@@ -45,7 +45,11 @@ Ipadapp::Application.routes.draw do
   #get "home/index"
 
   devise_for :user,:path_prefix => 'd',:controllers => { :registrations => "registrations" }
-
+  #devise_for :users,:path_prefix => 'd', :skip => [:registrations]
+  #as :user do
+  #  get 'users/edit' => 'devise/registrations#edit', :as => 'edit_user_registration'
+  #  put 'users/:id' => 'devise/registrations#update', :as => 'user_registration'
+  #end
   #resource :users
   devise_scope :user do
     post 'login' => 'sessions#create', :as => 'login'
