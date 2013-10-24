@@ -64,7 +64,7 @@ class UsersController < ApplicationController
     #@user.add_role :admin
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to users_url, notice: 'User was successfully created.' }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -78,15 +78,32 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
 
+    # required for settings form to submit when password is left blank
+    if params[:user][:password].blank?
+      params[:user].delete("password")
+      params[:user].delete("password_confirmation")
+    end
+
+
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to users_url, :notice=> 'User was successfully updated.'}
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+
+    #respond_to do |format|
+    #  if @user.update_attributes(params[:user])
+    #    format.html { redirect_to @user, notice: 'User was successfully updated.' }
+    #    format.json { head :no_content }
+    #  else
+    #    format.html { render action: "edit" }
+    #    format.json { render json: @user.errors, status: :unprocessable_entity }
+    #  end
+    #end
   end
 
   # DELETE /users/1
