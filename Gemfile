@@ -58,4 +58,6 @@ gem 'rolify'
 gem 'figaro'
 gem 'country_select'
 gem 'will_paginate', '~> 3.0'
+#gem 'gretel','2.0'
+gem 'gretel','2.1'
 
