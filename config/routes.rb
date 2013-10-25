@@ -1,5 +1,23 @@
 Ipadapp::Application.routes.draw do
 
+  resources :staff_tracking_positions
+
+
+  resources :major_variance_logs
+
+
+  resources :client_answers
+
+
+  resources :user_questions
+
+
+  resources :questions
+
+
+  resources :industries
+
+
   resources :push_notifications do
     collection do
       post :register_device

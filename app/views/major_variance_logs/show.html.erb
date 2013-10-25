@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Meeting:</b>
+  <%= @major_variance_log.meeting_id %>
+</p>
+
+<p>
+  <b>Datetime:</b>
+  <%= @major_variance_log.datetime %>
+</p>
+
+<p>
+  <b>Variance:</b>
+  <%= @major_variance_log.variance %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @major_variance_log.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @major_variance_log.longitude %>
+</p>
+
+<p>
+  <b>Created by:</b>
+  <%= @major_variance_log.created_by %>
+</p>
+
+
+<%= link_to 'Edit', edit_major_variance_log_path(@major_variance_log) %> |
+<%= link_to 'Back', major_variance_logs_path %>

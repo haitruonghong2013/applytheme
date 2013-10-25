@@ -1,0 +1,33 @@
+<h1>Listing major_variance_logs</h1>
+
+<table>
+  <tr>
+    <th>Meeting</th>
+    <th>Datetime</th>
+    <th>Variance</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>Created by</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @major_variance_logs.each do |major_variance_log| %>
+  <tr>
+    <td><%= major_variance_log.meeting_id %></td>
+    <td><%= major_variance_log.datetime %></td>
+    <td><%= major_variance_log.variance %></td>
+    <td><%= major_variance_log.latitude %></td>
+    <td><%= major_variance_log.longitude %></td>
+    <td><%= major_variance_log.created_by %></td>
+    <td><%= link_to 'Show', major_variance_log %></td>
+    <td><%= link_to 'Edit', edit_major_variance_log_path(major_variance_log) %></td>
+    <td><%= link_to 'Destroy', major_variance_log, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Major variance log', new_major_variance_log_path %>

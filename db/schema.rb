@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131017083623) do
+ActiveRecord::Schema.define(:version => 20131025095351) do
+
+  create_table "client_answers", :force => true do |t|
+    t.integer  "client_id"
+    t.integer  "question_id"
+    t.text     "content"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "client_notes", :force => true do |t|
     t.integer  "client_id"
@@ -35,11 +43,29 @@ ActiveRecord::Schema.define(:version => 20131017083623) do
     t.datetime "updated_at",      :null => false
   end
 
+  create_table "industries", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "locations", :force => true do |t|
     t.string   "address"
     t.float    "longitude"
     t.float    "latitude"
     t.integer  "client_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "major_variance_logs", :force => true do |t|
+    t.integer  "meeting_id"
+    t.datetime "datetime"
+    t.integer  "variance"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "created_by"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -80,6 +106,14 @@ ActiveRecord::Schema.define(:version => 20131017083623) do
     t.datetime "updated_at",                  :null => false
   end
 
+  create_table "questions", :force => true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.integer  "created_by"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "roles", :force => true do |t|
     t.string   "name"
     t.integer  "resource_id"
@@ -104,6 +138,22 @@ ActiveRecord::Schema.define(:version => 20131017083623) do
     t.datetime "updated_at",               :null => false
     t.datetime "start_time"
     t.datetime "end_time"
+  end
+
+  create_table "staff_tracking_positions", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "schedule_id"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "user_questions", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "question_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|

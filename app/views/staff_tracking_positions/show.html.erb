@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @staff_tracking_position.user_id %>
+</p>
+
+<p>
+  <b>Schedule:</b>
+  <%= @staff_tracking_position.schedule_id %>
+</p>
+
+<p>
+  <b>Latitude:</b>
+  <%= @staff_tracking_position.latitude %>
+</p>
+
+<p>
+  <b>Longitude:</b>
+  <%= @staff_tracking_position.longitude %>
+</p>
+
+
+<%= link_to 'Edit', edit_staff_tracking_position_path(@staff_tracking_position) %> |
+<%= link_to 'Back', staff_tracking_positions_path %>
